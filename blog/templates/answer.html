@@ -1,0 +1,31 @@
+{% extends 'bostrap.html' %}
+{%block title%}Q&A{%endblock%}
+{% load static %}
+{% block content %}
+{% if user.is_authenticated %}
+<style>
+    .form-group{
+        max-width: 50%;
+    }
+</style>
+<br><br><br>
+<center><h3>Question: {{comment.comment}}</h3></center>
+<br><br>
+<div class="form-group" >
+<form method="post" style="margin-left: 40px;" enctype="multipart/form-data">
+    
+{% csrf_token %}
+    {{form.media}}
+    {{form.as_p}}
+    <button class="btn btn-danger"  >Publier</button>
+   
+</form>
+</div>
+{%else%}
+
+
+<script>
+  alert('Error message: '+'you are not login ');
+</script>
+{%endif%}
+{%endblock%} 

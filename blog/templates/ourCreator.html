@@ -1,0 +1,89 @@
+
+{% extends 'bostrap.html' %}
+{%block title%}Creators{%endblock%}
+{% load static %}
+{% block content %}
+{% if user.is_authenticated %}
+
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Bootstrap Table</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <!-- icons bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+      <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@400;500;600&family=Inter:wght@300&family=Raleway:wght@100&display=swap" rel="stylesheet">
+      <style>
+ #myclass{
+        display:inline-block;
+        width: 80px;
+        height: 40px;
+}
+a{
+      text-decoration: none;
+      color: #fff;
+}
+a:hover{
+      color: #fff;
+      text-decoration: none;
+}
+
+
+      </style>
+   </head>
+   <body>
+      {% if messages %}
+      {% for message in messages %}
+          <div id="msg" class="text-center alert alert-{{ message.tags }}" role="alert">
+              {{ message|safe }}
+          </div>
+      {% endfor %}
+      {% endif %}
+      
+  <br>
+      <table class = "table">
+         <thead>
+            <tr>
+               <th><h4> Date  </h4></th>
+               <th><h4> fullname</h4></th>
+               <th><h4> skill</h4></th>
+               <th><h4> Action</h4></th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               {% for creator in object_list %}    
+               <td><p>{{creator.date_join}}</p></td>
+               <td><p>{{creator.fullname}}</p></td>
+               <td><p>{{creator.skill}}</p></td>
+               <td><a class="btn btn-dark" href="{% url 'update_creator' creator.pk %}"><i class="bi bi-pencil-fill"></i></a> &nbsp;&nbsp; <a class="btn btn-dark" href="{% url 'delete_creator' creator.pk %}"><i class="bi bi-trash-fill"></i></a></td>
+               
+            </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+   </body>
+   <script>
+            setTimeout(function() { 
+       if ($("#msg").length >0){
+          $("#msg").remove(); 
+        }
+      }, 2000);
+   </script>
+</html>
+
+
+{%else%}
+
+
+<script>
+  alert('Error message: '+'you are not login ');
+</script>
+{%endif%}
+{% endblock %}

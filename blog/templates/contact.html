@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+{%block title%}Contact {%endblock%}
+
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+        
+        <!-- Latest compiled and minified CSS -->
+        
+        <!-- Optional theme -->
+        
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+        <!-- <link rel="stylesheet" href="form.css" > -->
+		<br>
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" > -->
+        <!-- link w3shool icons -->
+<link href="https://fonts.googleapis.com/css2?family=Akshar:wght@400;500;600&family=Inter:wght@300&family=Poppins:ital,wght@0,200;1,100;1,300&family=Raleway:wght@100&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script>
+    
+    function findPage(){
+            var x=document.getElementById("search").value;
+            if(x==="blog" || x==='post' || x==='articles'){
+                window.open("blog","_self");
+            }
+             if(x==="contact" || x==="gmail"){
+                window.open("contact","_self");
+            }
+             if(x==="teem" || x==="creator" || x==="equipe"){
+                window.open("creator","_self");
+            }
+            if(x==="home" || x==="a propos" || x==="about"){
+                window.open("home","_self");
+            }
+        }
+</script>
+		<style>
+
+#form_container
+{
+	padding:10px 5px;
+	margin-top:80px;
+	background: #fff;	
+	color:#fff;
+     right: 17%;
+     width: 33%;
+    
+}
+h3{
+    display:flex ;
+    font-family: 'Akshar', sans-serif;
+font-family: 'Inter', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Roboto Condensed', sans-serif;
+font-family: 'Roboto Mono', monospace;
+color: #d90429;
+}
+span{
+    color : #8d99ae;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+.all{
+    padding-bottom: 250px;
+    padding-top: 90px;
+    
+}
+
+body
+{
+	background-color: #fff;
+	background-image: url("images/stduio-2035349_1280.jpg");
+	background-size: cover;
+	background-repeat:no-repeat;
+
+}
+
+.pic{
+    position: absolute;
+    width: 600px;
+    height: 350px;
+    right: 10%;
+    background-image: url("static/blog/assets/images/pub.jpg") ;
+    background-size: cover;
+	background-repeat:no-repeat;
+    top: 30%;
+  margin-left:640px ;
+  padding:10px 5px;
+}
+
+
+		</style>
+    </head>
+    <body >
+        <!-- <center><h3>thanks {{username}}</h3><p>we received your email and will respond shortly</p></center> -->
+        <div class="all">
+        <br><br><br><br>
+        <div class="pic">
+
+        </div>
+        
+        <div class="container">
+            <script></script>
+            <div class="row">
+                <div  id="form_container">
+                <a href="#" ><h3 ><i class="bi bi-twitter"></i>&nbsp;Twitter:&nbsp;<span>@mtsgroup</span></h3> </a> <br>
+                <a href="#"><h3><i class="bi bi-linkedin"></i>&nbsp;LINKDIN:&nbsp;<span>@mtsgroup</span></h3> </a> <br>
+                   <a href="#"><h3><i class="bi bi-github"></i>&nbsp;Github:&nbsp;<span>@mtsgroup</span></h3> </a> <br> 
+                   <a href="#"><h3><i class="bi bi-facebook"></i>&nbsp;facebook:&nbsp;<span>@mtsgroup</span></h3></a> <br>
+                   <!-- <a href="#"><h3>Email:&nbsp;<span>@mtsgroup</span></h3></a>  -->
+
+
+                </div>
+            </div>
+        
+            
+        </div>
+
+        
+        
+    </div>
+    </body>
+    <script type="text/javascript">
+        (function(d, m){
+            var kommunicateSettings = 
+                {"appId":"202979f92fd47c56d815ade5ad3258fd","popupWidget":true,"automaticChatOpenOnNavigation":true};
+            var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+            s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+            var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+            window.kommunicate = m; m._globals = kommunicateSettings;
+        })(document, window.kommunicate || {});
+
+
+        function findPage(){
+            var x=document.getElementById("search").value;
+            if(x==="blog" || x==='post' || x==='articles'){
+                window.open("blog","_self");
+            }
+             if(x==="contact" || x==="gmail"){
+                window.open("contact","_self");
+            }
+             if(x==="teem" || x==="creator" || x==="equipe"){
+                window.open("creator","_self");
+            }
+            if(x==="home" || x==="a propos" || x==="about"){
+                window.open("home","_self");
+            }
+        }
+    </script>
+</html>
+
+{% endblock %}

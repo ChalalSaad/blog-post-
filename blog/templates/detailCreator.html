@@ -1,0 +1,186 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!--
+    /   Multipurpose: Free Template by FreeHTML5.co
+    /   Author: https://freehtml5.co
+    /   Facebook: https://facebook.com/fh5co
+    /   Twitter: https://twitter.com/fh5co
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Document title -->
+    
+    <title>
+        {%block title%}
+        Details creator
+        {% endblock %}
+    </title>
+    <!-- Stylesheets & Fonts -->
+    <!-- Google Fonts -->
+    <link href="{% static 'blog/https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i%7CRajdhani:400,600,700'%}"
+        rel="stylesheet">
+    <!-- Plugins Stylesheets -->
+    <!-- <link rel="stylesheet" href="{% static 'blog/assets/css/loader/loaders.css'%}"> -->
+    <link rel="stylesheet" href="{% static 'blog/assets/css/font-awesome/font-awesome.css'%}">
+    <link rel="stylesheet" href="{% static 'blog/assets/css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'blog/assets/css/aos/aos.css'%}">
+    <link rel="stylesheet" href="{% static 'blog/assets/css/swiper/swiper.css'%}">
+    <link rel="stylesheet" href="{% static 'blog/assets/css/lightgallery.min.css'%}">
+    <!-- Template Stylesheet -->
+    <link rel="stylesheet" href="{% static 'blog/assets/css/style.css' %}">
+    <!-- Responsive Stylesheet -->
+    <link rel="stylesheet" href="{% static 'blog/assets/css/responsive.css'%}">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    
+    
+</head>
+
+<body>
+    <!-- Loader Start -->
+    <div class="css-loader">
+        <div class="loader-inner line-scale d-flex align-items-center justify-content-center"></div>
+    </div>
+    <!-- Loader End -->
+    <!-- Header Start -->
+    <header class="position-absolute w-100"  style="background-color: black;">
+        <div class="container">
+            <div class="top-header d-none d-sm-flex justify-content-between align-items-center">
+                <div class="contact">
+                    <a href="tel:+1234567890" class="tel"><i class="fa fa-phone" aria-hidden="true"></i>+212 668 976 562</a>
+                    <a href="mailto:info@yourmail.com"><i class="fa fa-envelope"
+                            aria-hidden="true"></i>
+                            contact@mtsgroup.ma</a>
+                </div>
+                <nav class="d-flex aic">
+                    
+                    <ul class="nav social d-none d-md-flex">
+                        <li><a href="https://web.facebook.com/people/Mega-Technology-Services-GROUP/100064798092785/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="https://www.linkedin.com/checkpoint/challengesV2/AQHtCqOVN_-CDgAAAYCMH7_LZeruitR_gCODLN_a5iGD_4JKUQ-JLLIKmpNVadmfjYhy2smIs9MWMx8AFKi3tblrZ-npr4EN5A?original_referer=https%3A%2F%2Fmtsgroup.ma%2F"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <nav class="navbar navbar-expand-md navbar-light">
+
+                <!-- put logo of mts her  -->
+                <a class="navbar-brand" id="logo" href="{% static 'blog/index.html'%}"><img src="{% static 'blog/assets/images/logo2.png' %}" ></a>
+                <div class="group d-flex align-items-center">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation"><span
+                            class="navbar-toggler-icon"></span></button>
+                    <a class="login-icon d-sm-none" href="#"><i class="fa fa-user"></i></a>
+                    <a class="cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                </div>
+                <a class="search-icon d-none d-md-block" href="#"><i class="fa fa-search"></i></a>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a style="color: #fff; font-size:1.0em;" class="nav-link" href="{% url 'index'  %}">A PROPOS</a></li>
+                        <li class="nav-item"><a style="color: #fff; font-size:1.0em;" class="nav-link" href="{% url 'teem' %}">créateur</a></li>
+                        <li class="nav-item"><a style="color: #fff; font-size:1.0em;" class="nav-link" href="{% url 'blog'  %}">Blog</a></li>
+                        <li class="nav-item"><a style="color: #fff; font-size:1.0em;" class="nav-link" href="{% url 'contact'  %}">Contact</a></li>
+                    </ul>
+                    <form class="bg-white search-form" method="get" id="searchform">
+                        <div class="input-group">
+                            <input style="color: black;" class="field form-control" id="search" name="s" type="search" placeholder="Search" onchange="findPage()">
+                            <span class="input-group-btn">
+                                <input class="submit btn btn-primary" id="search"  name="submit" type="submit" value="submit" onclick="findPage()" onchange="findPage()" >
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <style>
+        #fb{
+    color: #fff;
+    /* background-color: red;
+    border:none */
+  }
+  #gm{
+    color: #fff;
+    /* background-color: red;
+    border:none */
+  }
+  #tw{
+    color: #fff;
+    /* background-color: red;
+    border:none */
+  
+}
+.bio{
+    color: black;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+#logo{
+            position: absolute;
+top:-15px;
+left: -280px;}
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: red;
+}
+
+
+#a {
+  text-decoration: none;
+  font-size: 22px;
+  background-color: none;
+  
+}
+#a:hover{
+    color:#000;
+}
+
+
+
+    </style>
+  
+    <br><br><br><br><br><br><br><br>
+    
+                
+
+                    <div class="card" id="bio">
+                      
+                        {% if creator.image_creator %}  
+                        <img class="i" src="{{creator.image_creator.url}}"  alt="John" style="width:100%">
+                        {%endif%}
+                        <h1 style="color:#000 ; font-family: 'Roboto Mono', monospace;">{{creator.fullname}}</h1>
+                      <p class="title">{{creator.skill}}</p>
+                      <p id="bio">{{creator.profile|safe}}</p>
+                      <a id="a" href="#"><i class="fa fa-dribbble"></i></a>
+                      <a href="https://twitter.com/kevinmitnick" id="a"><i class="fa fa-twitter"></i></a>
+                      <a href="#" id="a"><i class="fa fa-linkedin"></i></a>
+                      <a href="#" id="a"><i class="fa fa-facebook"></i></a>
+                      
+                      <a style="text-decoration: none;" class="button" href="{% url 'teem' %}" ><p>Back</p></a>
+                    </div>
+  <br><br><br><br><br><br>

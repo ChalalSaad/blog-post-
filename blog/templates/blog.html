@@ -1,0 +1,322 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!--
+    /   Multipurpose: Free Template by FreeHTML5.co
+    /   Author: https://freehtml5.co
+    /   Facebook: https://facebook.com/fh5co
+    /   Twitter: https://twitter.com/fh5co
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Document title -->
+    
+    <title>
+        {%block title%}
+        Blog
+        {% endblock %}
+    </title>
+    <!-- Stylesheets & Fonts -->
+    <!-- Google Fonts -->
+    <link href="{% static 'blog/https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i%7CRajdhani:400,600,700'%}"
+        rel="stylesheet">
+    <!-- Plugins Stylesheets -->
+    <!-- <link rel="stylesheet" href="{% static 'blog/assets/css/loader/loaders.css'%}"> -->
+    <link rel="stylesheet" href="{% static 'blog/assets/css/font-awesome/font-awesome.css'%}">
+    <link rel="stylesheet" href="{% static 'blog/assets/css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'blog/assets/css/aos/aos.css'%}">
+    <link rel="stylesheet" href="{% static 'blog/assets/css/swiper/swiper.css'%}">
+    <link rel="stylesheet" href="{% static 'blog/assets/css/lightgallery.min.css'%}">
+    <!-- Template Stylesheet -->
+    <link rel="stylesheet" href="{% static 'blog/assets/css/style.css' %}">
+    <!-- Responsive Stylesheet -->
+    <link rel="stylesheet" href="{% static 'blog/assets/css/responsive.css'%}">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    
+    
+</head>
+
+<body>
+    <!-- Loader Start -->
+    <div class="css-loader">
+        <div class="loader-inner line-scale d-flex align-items-center justify-content-center"></div>
+    </div>
+    <!-- Loader End -->
+    <!-- Header Start -->
+    <header class="position-absolute w-100"  style="background-color: black;">
+        <div class="container">
+            <div class="top-header d-none d-sm-flex justify-content-between align-items-center">
+                <div class="contact">
+                    <a href="tel:+1234567890" class="tel"><i class="fa fa-phone" aria-hidden="true"></i>+212 668 976 562</a>
+                    <a href="mailto:info@yourmail.com"><i class="fa fa-envelope"
+                            aria-hidden="true"></i>
+                            contact@mtsgroup.ma</a>
+                </div>
+                <nav class="d-flex aic">
+                    
+                    <ul class="nav social d-none d-md-flex">
+                        <li><a href="https://web.facebook.com/people/Mega-Technology-Services-GROUP/100064798092785/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="https://www.linkedin.com/checkpoint/challengesV2/AQHtCqOVN_-CDgAAAYCMH7_LZeruitR_gCODLN_a5iGD_4JKUQ-JLLIKmpNVadmfjYhy2smIs9MWMx8AFKi3tblrZ-npr4EN5A?original_referer=https%3A%2F%2Fmtsgroup.ma%2F"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <nav class="navbar navbar-expand-md navbar-light">
+
+                <!-- put logo of mts her  -->
+                <a class="navbar-brand" id="logo" href="{% static 'blog/index.html'%}"><img src="{% static 'blog/assets/images/logo2.png' %}" ></a>
+                <div class="group d-flex align-items-center">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation"><span
+                            class="navbar-toggler-icon"></span></button>
+                    <a class="login-icon d-sm-none" href="#"><i class="fa fa-user"></i></a>
+                    <a class="cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                </div>
+                <a class="search-icon d-none d-md-block" href="#"><i class="fa fa-search"></i></a>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a style="color: #fff; font-size:1.0em;" class="nav-link" href="{% url 'index'  %}">A PROPOS</a></li>
+                        <li class="nav-item"><a style="color: #fff; font-size:1.0em;" class="nav-link" href="{% url 'teem' %}">créateur</a></li>
+                        <li class="nav-item"><a style="color: #fff; font-size:1.0em;" class="nav-link" href="{% url 'blog'  %}">Blog</a></li>
+                        <li class="nav-item"><a style="color: #fff; font-size:1.0em;" class="nav-link" href="{% url 'contact'  %}">Contact</a></li>
+                    </ul>
+                    <form class="bg-white search-form" method="get" id="searchform">
+                        <div class="input-group">
+                            <input style="color: black;" class="field form-control" id="search" name="s" type="search" placeholder="Search" onchange="findPage()">
+                            <span class="input-group-btn">
+                                <input class="submit btn btn-primary" id="search"  name="submit" type="submit" value="submit" onclick="findPage()" onchange="findPage()" >
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </header>
+<style>
+  #py{
+    width:250px;
+    height:300px;
+  }
+  #footer{
+    color: #bbbbbb;
+  }
+  #title:hover{
+    color: #0088cc; 
+  }
+  p{
+    font-family: 'Akshar', sans-serif;
+font-family: 'Inter', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Roboto Condensed', sans-serif;
+font-size: 20px;
+
+  }
+ 
+  #title{
+    font-family:  'Roboto Slab, Arial, sans-serif'; 
+
+    
+  font-size: 28px;
+  line-height: 25px;
+  text-align: start;
+  color: #0088cc;
+    }
+  
+  a{
+    color : #1E90FF; 
+    
+  
+  }
+  a:hover{
+    color  : #1E90FF;
+  }
+  #fb{
+    color: #fff;
+    /* background-color: red;
+    border:none */
+  }
+  #gm{
+    color: #fff;
+    /* background-color: red;
+    border:none */
+  }
+  #tw{
+    color: #fff;
+    /* background-color: red;
+    border:none */
+  }
+  #c{
+    color : black ;
+  }
+  #type{
+    font-family: "Raleway, sans-serif";
+    font-size: 20px;
+    color: #000;
+  }
+  #logo{
+            position: absolute;
+top:-15px;
+left: -280px;}
+#text{
+  font-family: 'Montserrat, Arial, sans-serif';
+  
+  FONT-SIZE:16px;
+TEXT-ALIGN:start;
+lETTER-SPACING:normal;
+LINE-HEIGHT:22px;
+  
+}
+#cadr{
+  border: none;
+}
+#btn{
+  font-weight: bold;
+}
+</style>
+
+<br><br><br><br><br>
+  <div style=" padding-top: 90px;" >
+<div class="container"  style="">
+  <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+  
+  <div class="row" >
+
+    <div class="col-12 col-md-4" style="">
+      <br><br>      
+
+
+      <div id="cadr" class="card w-75" style="">
+        <strong >Last Recommandation :</strong>
+        {% for x in publication %}
+        <div  class="card-body" style="">
+          
+          <a href="{{x.link}}"> <img  src="{{ x.image_recommandation.url }}" class="card-img-top"></a>
+          <h5 style="color: #000;">{{x.title}}</h5>
+          <hr/>
+          
+          
+      
+          
+          
+          <a id="btn" href="{% url 'Detail-publication' x.pk %}">Read more</a>
+        </div>
+        <br><hr>
+        {% endfor %}
+        
+      </div>
+    
+       <br/>
+       <div class="card" style="background-color: #fff;">
+        <div class="card-body" >
+          
+          <hr/>
+          <div class="ratio ratio-16x9">
+ <a href="https://accounts.binance.com/en/register?ref=MYQVP8HB"> <img  style="width: 100%;" src="{% static 'blog/assets/images/cry.png'%}"  allowfullscreen></img ></a>
+</div>
+        </div>
+      </div> 
+      
+      <br/>
+      <div class="card" style="background-color: #fff;">
+        <div class="card-body" >
+          <h5 style="color: #000;">Recommended Gear:</h5>
+          <hr/>
+          <div class="ratio ratio-16x9">
+ <a href="https://www.amazon.com/s?k=cyber+security+books&crid=3NHL62CQSZ1IH&sprefix=cyber+se%2Caps%2C491&ref=nb_sb_ss_ts-doa-p_2_8"> <img  style="width: 75%;" src="{% static 'blog/assets/images/amazon.png'%}"  allowfullscreen></img ></a>
+</div>
+        </div>
+      </div> 
+      <div class="card" style="background-color: #fff;">
+        <div class="card-body" >
+          
+          <hr/>
+          <div class="ratio ratio-16x9">
+ <a href="https://www.amazon.com/s?k=cyber+security+books&rh=n%3A283155%2Cn%3A3839&dc&crid=3NHL62CQSZ1IH&qid=1651391972&rnid=2941120011&sprefix=cyber+se%2Caps%2C491&ref=sr_nr_n_5"> <img  style="width: 75%;" src="{% static 'blog/assets/images/hacking.jpg'%}"  allowfullscreen></img ></a>
+</div>
+        </div>
+      </div> 
+      <div class="card" style="background-color: #fff;">
+        <div class="card-body" >
+          
+          <hr/>
+          <div class="ratio ratio-16x9">
+ <a href="https://www.amazon.com/s?k=python&crid=35AHYT4NHGDPR&sprefix=python%2Caps%2C390&ref=nb_sb_noss_1"> <img id="py" src="{% static 'blog/assets/images/python.jfif'%}" title="YouTube video" allowfullscreen></img></a>
+</div>
+        
+
+</div>
+        
+        
+      </div>
+      <div class="card" style="background-color: #fff;">
+        <div class="card-body" >
+          
+          <hr/>
+          <div class="ratio ratio-16x9">
+  <iframe id="vedio" src="https://www.youtube.com/embed/aP8yrkkLWlM" title="YouTube video" allowfullscreen></iframe id="vedio">
+</div>
+        </div>
+      </div>  
+    </div>
+    
+    <div class="col-md-8">
+      
+      <div class="card mb-3" >
+        
+        {% for post in object_list %}            
+        {% if post.image_post %}
+        <img id="image_post"  src="{{ post.image_post.url }}" class="card-img-top">
+
+          {%endif%}
+        <div class="card-body">
+          <h3 id="type">{{post.typeContenu}}</h3><br>
+          <a  href="{% url 'detail' post.pk %}"><h5 id="title"  class="card-title">{{post.titre}}</h5></a> <br>
+          <span id="footer" class="card-text"> <i class="bi bi-person-fill"></i>&nbsp;&nbsp;<strong>{{post.creator}}</strong>&nbsp;&nbsp;&nbsp; <strong><i class="bi bi-clock"></i>&nbsp;&nbsp;{{post.date_post}}</strong></span>
+         <br><br><br>
+          <a id="btn"  href="{% url 'detail' post.pk %}">Read more</a>
+          <br><br><br><br><br>
+        </div>
+        {% endfor %}
+        
+      </div>
+  
+   
+      
+    </div>
+    
+    
+  </div>
+</div>  
+</body>
+<script type="text/javascript">
+  (function(d, m){
+      var kommunicateSettings = 
+          {"appId":"202979f92fd47c56d815ade5ad3258fd","popupWidget":true,"automaticChatOpenOnNavigation":true};
+      var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+      s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+      var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+      window.kommunicate = m; m._globals = kommunicateSettings;
+  })(document, window.kommunicate || {});
+
+  function findPage(){
+            var x=document.getElementById("search").value;
+            if(x==="blog" || x==='post' || x==='articles'){
+                window.open("blog","_self");
+            }
+             if(x==="contact" || x==="gmail"){
+                window.open("contact","_self");
+            }
+             if(x==="teem" || x==="creator" || x==="equipe"){
+                window.open("creator/","_self");
+            }
+            if(x==="home" || x==="a propos" || x==="about"){
+                window.open("home","_self");
+            }
+        }
+</script>
+</html>

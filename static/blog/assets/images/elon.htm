@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:v="http://rdf.data-vocabulary.org/#">
+<head>
+    
+
+<script type="text/javascript">
+!function(o,r){var d=o.Didomi||{},t=!1,a=!1,l=!1,s=!1,c="",u="multiple didomi-buttons didomi-popup-notice-buttons",n="buttons",p="style",m="form",i=o.console||{log:function(e){}},f=function(){},v={wall_active:!0};function g(){f=!1,r.getElementById("didomi-host").remove();var e=r.getElementById("old-didomi-host");e.setAttribute("id","didomi-host"),e.style.display="block",d.notice.show("informations")}function y(){return"<div class='didomi-popup-notice-logo-container'><img class='didomi-popup-notice-logo' alt='Logo' src='"+d.getConfig().app.logoUrl+"'></div>"}function b(e){e=Object.assign({id:"X",defaultClasses:"didomi-components-button didomi-button standard-button",class:"",content:"OK",disabled:!1},e);return e.class=e.defaultClasses+" "+e.class,e.disabled=e.disabled?"disabled":"","<button id='"+e.id+"' class='"+e.class.trim()+"' "+e.disabled+"><span>"+e.content+"</span></button>"}function h(){r.getElementById("old-didomi-host")||(t=r.getElementById("didomi-host"),(i=r.createElement("div")).setAttribute("id","didomi-host"),i.setAttribute("unifywall",!0),i.innerHTML=t.innerHTML,(e=i.querySelector(".didomi-popup-view"))&&(e.id="unify_wall_content",t.setAttribute("id","old-didomi-host"),t.style.display="none",r.body.insertBefore(i,r.getElementById("old-didomi-host")),r.body.classList.add("didomi-popup-open"),setTimeout(function(){r.body.classList.add("didomi-popup-open")},200),f=!1));var e=r.getElementById("unify_wall_content");if(e){var t={id:"unify-accept-finally",class:"didomi-button-highlight",content:v.btn_accept_finally},i={id:"unify-goto-subscribe",class:"didomi-button-highlight",content:v.btn_abo_text};return e.innerHTML=y()+"<div class='didomi-popup-notice-text-container'><div class='didomi-popup-notice-text'>"+v.paywall_text+"<div id='"+n+"' class='"+u+"'>"+b(t)+b(i)+"</div></div></div>",e.querySelector("#unify-accept-finally").addEventListener("click",function(){g(),d.setUserAgreeToAll(),r.body.classList.remove("didomi-popup-open")}),e.querySelector("#unify-goto-subscribe").addEventListener("click",function(){_()}),f=!1,1}}function _(){var o=r.getElementById("unify_wall_content");if(!o)return!1;var e=v.legal_text_full.split("</p>",1)[0]+"</p>",t={id:"unify-pay",class:"didomi-button-highlight",content:"Confirmer",disabled:0==c.trim().length};o.innerHTML=y()+"<div class='didomi-popup-notice-text-container'><div class='didomi-popup-notice-text'><div class='didomi-popup-title'>"+v.prepayment_title+"</div><"+m+" action='/?payment' method='post' id='prepayment-form'><div class='didomi-popup-form-row'><div class='didomi-field-container didomi-field-container-2'><input type='email' name='email' value='"+c+"' placeholder='Adresse e-mail*' aria-label='Adresse e-mail' required /></div><div><small>* champ obligatoire</small></div></div><div class='didomi-popup-form-row'><p><strong>"+v.legal_text_title+"</strong></p>"+e+"<p "+p+"='margin-top:-5px; text-align:center'><svg id='unify-see-legal-screen' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 452 452' "+p+"='width:20px;margin:0 auto;cursor:pointer'><path fill='"+d.getConfig().theme.color+"' d='m226 355c-8 0-16-3-22-9l-194-194c-12-12-12-32 0-45 12-12 32-12 45 0l172 172 172-172c12-12 32-12 45 0 12 12 12 32 0 45l-194 194c-6 6-14 9-22 9z'/></svg></p></div><div class='"+u+"'>"+b({id:"unify-goback",content:"Retour"})+b(t)+"</div></"+m+"></div></div>",o.querySelector("#unify-goback").addEventListener("click",function(e){e.preventDefault(),o.querySelector("input[name=email]").remove(),h()}),o.querySelector("#unify-pay").addEventListener("click",function(e){i(),e.preventDefault(),o.querySelector("input[name=email]").remove(),w()}),o.querySelector("#unify-see-legal-screen").addEventListener("click",function(e){i(),e.preventDefault(),o.querySelector("input[name=email]").remove(),function(){var e=r.getElementById("unify_wall_content");if(!e)return;e.innerHTML=y()+"<div class='didomi-popup-notice-text-container'><div class='didomi-popup-notice-text'><p><strong>"+v.legal_text_title+"</strong></p>"+v.legal_text_full+"<p "+p+"='margin-top:-5px; text-align:center; transform:rotate(180deg)'><svg class='unify-goback' id='unify-see-legal-screen-back' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 452 452' "+p+"='width:20px;margin:0 auto;cursor:pointer'><path fill='"+d.getConfig().theme.color+"' d='m226 355c-8 0-16-3-22-9l-194-194c-12-12-12-32 0-45 12-12 32-12 45 0l172 172 172-172c12-12 32-12 45 0 12 12 12 32 0 45l-194 194c-6 6-14 9-22 9z'/></svg></p></div></div>",e.querySelectorAll(".unify-goback").forEach(function(e){e.addEventListener("click",_)}),f=!1}()});var i=function(e){var t=o.querySelector("input[name=email]"),i=t.checkValidity(),n=o.querySelector("#unify-pay");i&&(c=t.value,n.removeAttribute("disabled")),i||n.hasAttribute("disabled")||n.setAttribute("disabled","disabled")};return o.querySelector("input[name=email]").addEventListener("keyup",i),o.querySelector("input[name=email]").addEventListener("onblur",i),l||S(function(){}),!(f=!1)}function x(e){e=e||"Merci de réitérer ultérieurement",o.clearTimeout(a);var t=r.getElementById("unify_wall_content");if(!t)return!1;t.innerHTML=y()+"<div class='didomi-popup-notice-text-container'><div class='didomi-popup-notice-text' "+p+"='text-align:center'><div class='didomi-popup-title'>Désolé...</div><p>Une erreur s'est produite : <em>"+e+"</em></p></div></div>",f=!1}function w(){var t=r.getElementById("unify_wall_content");if(!t)return!1;if((i=r.getElementById("unify_wall_content"))&&(i.scrollHeight,i.scrollWidth,i.innerHTML=y()+"<div class='didomi-popup-notice-text-container'><div class='didomi-popup-notice-text' "+p+"='text-align:center'><"+p+'>.unifywall-loader-icon {display: block;width: 80px;height: 80px;margin-left: auto;margin-right: auto;}.unifywall-loader-icon:after {content: " ";display: block;width: 64px;height: 64px;margin: 8px;border-radius: 50%;border: 6px solid '+d.getConfig().theme.color+";border-color: "+d.getConfig().theme.color+" transparent "+d.getConfig().theme.color+" transparent;animation: unifywall-loader-icon 1.2s linear infinite;}@keyframes unifywall-loader-icon {0% { transform: rotate(0deg);}100% { transform: rotate(360deg);}}</"+p+"><div class='unifywall-loader-icon'></div><span class='didomi-popup-notice'>Chargement en cours...</span></div></div>",o.clearTimeout(a),a=o.setTimeout(function(){return x("temps d'attente dépassé")},2e4),f=!1),l){if(!s)return f=!1,void function t(i,e){if(!e){var n=k("create_intent");return void L(n,function(e){t(i,e)})}if("object"!=typeof e||!("status"in e))return void x();if("success"!==e.status)return void x();s=e.intent.client_secret;i();return}(w);o.clearTimeout(a);var e={id:"unify-pay",class:"didomi-button-highlight",content:v.btn_pay_text,disabled:!0};t.innerHTML=y()+"<div class='didomi-popup-notice-text-container'><div class='didomi-popup-notice-text'><div class='didomi-popup-title'>S'abonner à <span>"+d.getConfig().app.name+"</span></div><div class='didomi-popup-arguments'>"+v.arguments_text+"</div><"+m+" action='/?payment' method='post' id='payment-form'><div id='card-errors' role='alert'></div><div class='didomi-popup-form-row'><label for='card-number'>&#x1F512; Informations de la carte*</label><div class='didomi-field-container'><div id='card-number'></div><div id='card-expiry'></div><div id='card-cvc'></div></div><div><small>* champs obligatoires</small></div></div><div class='didomi-popup-form-row'>"+v.payment_legal_text+"</div><div class='"+u+"'>"+b({id:"unify-goback",content:"Retour"})+b(e)+"</div></"+m+"></div></div>",t.querySelector("#unify-goback").addEventListener("click",_);var i=l.elements(),e={base:{color:"#3F3735",fontWeight:500,fontSize:"15px",fontSmoothing:"antialiased","::placeholder":{color:"#CFD7DF"},":-webkit-autofill":{color:"#e39f48"}},invalid:{color:"#E25950","::placeholder":{color:"#FFCCA5"}}},n=i.create("cardNumber",{style:e,showIcon:!0,placeholder:"Numéro de carte"});n.mount("#card-number"),i.create("cardExpiry",{style:e}).mount("#card-expiry");e=i.create("cardCvc",{style:e});return e.mount("#card-cvc"),e.on("change",function(e){t.querySelector("#unify-pay").disabled=!e.complete,t.querySelector("#card-errors").textContent=e.error?e.error.message:""}),t.querySelector("#payment-form").addEventListener("submit",function(e){e.preventDefault(),t.querySelector("#unify-pay").disabled=!0,t.querySelector("#unify-pay span").innerHTML="Vérifications en cours",l.confirmCardPayment(s,{payment_method:{card:n,billing_details:{email:c}}}).then(C)}),!(f=!1)}S(w)}function C(e){var t,i=null;"object"!=typeof e?i="Une erreur innattendue est survenue":e.error?i=e.error.message:"paymentIntent"in e&&"status"in e.paymentIntent&&"succeeded"==e.paymentIntent.status||(i="Ce paiement a été refusé, veuillez vérifier vos informations bancaires"),i?(o.document.querySelector("#unify-pay span").innerHTML=v.btn_pay_text,t=i,(i=r.getElementById("card-errors"))&&(i.textContent=t)):L(k("check_and_grant_access",{stripe_client_secret:e.paymentIntent.id}),function(e){return(!(e&&"object"==typeof e&&"status"in e&&"success"===e.status)?x:function(){var e=r.getElementById("unify_wall_content");if(!e)return;e.innerHTML=y()+"<div class='didomi-popup-notice-text-container'><div class='didomi-popup-notice-text' "+p+"='text-align:center'><div "+p+"='width:80px;margin: 0 auto 20px'><svg viewBox='0 0 44 44' xmlns='http://www.w3.org/2000/svg'><path d='M42.833 7.792L19.062 31.584l-8.833-8.833 2.937-2.938 5.896 5.896L39.895 4.876l2.937 2.917zm-4.604 10.5c.27 1.188.437 2.438.437 3.708 0 9.209-7.458 16.667-16.667 16.667S5.332 31.21 5.332 22 12.791 5.333 22 5.333c3.292 0 6.334.959 8.917 2.605l3-3a20.625 20.625 0 00-11.917-3.771C10.499 1.167 1.166 10.5 1.166 22s9.333 20.833 20.833 20.833S42.832 33.499 42.832 22c0-2.48-.458-4.854-1.25-7.063l-3.354 3.354z' fill='"+d.getConfig().theme.color+"' fill-rule='nonzero' stroke='#fff' stroke-width='1.5'/></svg></div><div class='didomi-popup-title'>Votre paiement a bien été enregistré.</div><p><span>Vous allez recevoir un e-mail de confirmation dans quelques instants.</span></p><div id='"+n.split("").join("")+"' class='"+u+"'>"+b({id:"btn-close-confirm-payment",class:"didomi-button-highlight",content:"Je commence à naviguer"})+"</div></div></div>",e.querySelector("#btn-close-confirm-payment").addEventListener("click",function(){g(),d.setUserDisagreeToAll(),r.body.classList.remove("didomi-popup-open")}),f=!1})()})}function e(){var e=r.getElementById("didomi-host");o.MutationObserver&&!t&&(t=new MutationObserver(function(e){e=e.filter(function(e){return 0<e.addedNodes.length&&e.target.className.includes("notranslate")}),e=e.filter(function(e){return e.target.className.includes("notranslate")});0<e.length&&f&&f()}),e.setAttribute("unify_wall",!0),t.observe(e,{childList:!0,subtree:!0}))}function q(){var e,t;for(e in v.required_purposes_ids){var i=v.required_purposes_ids[e];if(!1===d.getUserConsentStatusForPurpose(i))return!1}for(t in v.required_vendors_ids){var n=v.required_vendors_ids[t];if(!1===d.getUserConsentStatusForVendor(n))return!1}return!0}function S(e){var t=r.createElement("script");t.type="text/javascript",t.src="https://js.stripe.com/v3/",t.onload=function(){l=Stripe(v.stripe_publishable_key,{locale:"fr"}),e()},o.document.head.appendChild(t)}function L(e,t){var i=new XMLHttpRequest;i.onreadystatechange=function(){var e;i.readyState==XMLHttpRequest.DONE&&(e=JSON.parse(i.responseText),t(e))},i.ontimeout=function(){return x("Délai d'attente dépassé")},i.onerror=function(e){t(!0)},i.open("POST",e),i.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),i.withCredentials=!0,i.send()}function k(e,t){var i=v.stripe_proxy_url;if(i+=i.includes("?")?"&":"?",i+="action="+e,t)for(var n in t)i+="&"+n+"="+encodeURIComponent(t[n]);return i}o.didomiConfig=o.didomiConfig||{},o.didomiConfig.notice=o.didomiConfig.notice||{},"enable"in o.didomiConfig.notice&&!1===o.didomiConfig.notice.enable||(!0!=!!r.cookie.split("; ").find(function(e){return e.startsWith("unifywall_paid=")})?(o.didomiConfig.notice.enable=!0,o.didomiOnReady=o.didomiOnReady||[],o.didomiOnReady.push(function(){d=o.Didomi||{},0!=function(){0 in d.getConfig();0 in d.getConfig().custom;(v=Object.assign({},v,d.getConfig().custom.unify_wall)).debug&&v.debug;if(0<["wall_active","paywall_text","btn_abo_text","btn_accept_finally","required_purposes_ids","required_vendors_ids","stripe_publishable_key","stripe_proxy_url","prepayment_title","legal_text_title","legal_text_full","arguments_text","payment_legal_text","btn_pay_text"].reduce(function(e,t){return t in v?e:(i.error("-> Unify Wall: Missing mandatory variable "+t),e+1)},0))return!1;return!0}()&&v.wall_active&&(0==d.notice.isVisible()&&0==q()&&0==d.shouldConsentBeCollected()&&(e(),f=function(){h()},d.notice.show("informations")),d.on("notice.clickdisagree",function(){f=function(){h()},h()}),d.on("preferences.clickdisagreetoall",function(){e(),f=function(){h()},d.preferences.hide(),d.notice.show("informations")}),d.on("preferences.clicksavechoices",function(){0==q()&&(e(),f=function(){h()},d.preferences.hide(),d.notice.show("informations"))}),d.on("notice.shown",function(){}))})):o.didomiConfig.notice.enable=!1)}(window,document);
+
+</script>
+
+
+<script type="text/javascript">
+    window.gdprAppliesGlobally=true;(function(){function a(e){if(!window.frames[e]){if(document.body&&document.body.firstChild){var t=document.body;var n=document.createElement("iframe");n.style.display="none";n.name=e;n.title=e;t.insertBefore(n,t.firstChild)}
+    else{setTimeout(function(){a(e)},5)}}}function e(n,r,o,c,s){function e(e,t,n,a){if(typeof n!=="function"){return}if(!window[r]){window[r]=[]}var i=false;if(s){i=s(e,t,n)}if(!i){window[r].push({command:e,parameter:t,callback:n,version:a})}}e.stub=true;function t(a){if(!window[n]||window[n].stub!==true){return}if(!a.data){return}
+    var i=typeof a.data==="string";var e;try{e=i?JSON.parse(a.data):a.data}catch(t){return}if(e[o]){var r=e[o];window[n](r.command,r.parameter,function(e,t){var n={};n[c]={returnValue:e,success:t,callId:r.callId};a.source.postMessage(i?JSON.stringify(n):n,"*")},r.version)}}
+    if(typeof window[n]!=="function"){window[n]=e;if(window.addEventListener){window.addEventListener("message",t,false)}else{window.attachEvent("onmessage",t)}}}e("__tcfapi","__tcfapiBuffer","__tcfapiCall","__tcfapiReturn");a("__tcfapiLocator");(function(e){
+    var t=document.createElement("script");t.id="spcloader";t.type="text/javascript";t.async=true;t.src="https://sdk.privacy-center.org/"+e+"/loader.js?target="+document.location.hostname;t.charset="utf-8";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)})("06500ff6-20a4-4d6a-af2e-2572022c1b4f")})();
+</script>
+<script type="text/javascript">
+    if (window.location.pathname == "/politique-de-confidentialite.htm"
+        || window.location.pathname == "/mentions-legales.htm"
+        || window.location.pathname == "/faq-cookies.htm") {
+        window.didomiConfig = {
+            notice: { enable: false }
+        };
+    }
+
+    window.didomiConfig = window.didomiConfig || [];
+    window.didomiConfig.custom = {
+        unify_wall: {
+            wall_active: false
+        }
+    }
+</script>
+    <script type="text/javascript">
+    window.unify_dataSlayer = window.unify_dataSlayer || [];
+    var dmpData = [
+    {
+        "event": "neweb-dmp",
+        "site": {
+            "sid": 385951,
+            "platform": "cnet",
+            "lang": "fr",
+            "environment": "prod"
+        },
+        "page": {
+            "section": "News",
+            "subSection": "Internet",
+            "sectionId": "2",
+            "subSectionId": "39001287",
+            "brands": [
+                "Twitter"            ],
+            "mainTag": [
+                "Twitter","Twitter"            ],
+            "trackPageview": ""
+        },
+        "content": {
+            "type": "Actualité",
+            "date": "20220426",
+            "hour": "08:16",
+            "author": "Marc Zaffagni avec CNET.com",
+            "label": "Elon Musk et Twitter ont conclu un accord ",
+            "note": ""        },
+        "utm": {
+            "campaign": "",
+            "medium": "",
+            "source": ""
+        },
+        "ops": {
+            "id": "",
+            "name": "",
+            "brand": ""
+        }
+    }];
+
+    dmpData[0].user = {
+        "id": "",
+        "isLoggedIn": 0,
+        "device": "desktop",
+        "registrationDate": "",
+        "firstPost": "",
+        "dom": "",
+        "registrationType": "",
+        "newsletterOptin": "",
+        "pwa": "web"
+    };
+    dmpData[0].user.referer = document.referrer;
+    dmpData[0].user.adblocker = 0;
+    dmpData[0].user.screenResolution = window.screen.width + "x" + window.screen.height;
+
+    unify_dataSlayer.push(dmpData[0]);
+
+    /**
+     * Check if Adblocker is active
+     */
+    window.onload = function() {
+        var testAd = document.createElement("div");
+        testAd.innerHTML = "&nbsp;";
+        testAd.className = "mvp-widget-ad";
+        document.body.appendChild(testAd);
+        window.setTimeout(function () {
+            if (testAd.offsetHeight === 0) {
+                window.unify_dataSlayer[0].user.adblocker = 1;
+            }
+            testAd.remove();
+        }, 100);
+    }
+</script>    
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','unify_dataSlayer','GTM-N7WKPN');</script>
+
+    <title dir="ltr">Elon Musk et Twitter ont conclu un accord  - CNET France</title>
+    <meta name="description" content="Le grand patron a déjà émis des idées sur les changements qu&#039;il souhaite impulser en prenant les commandes de Twitter. "/>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <meta charset="utf-8" />
+            <meta http-equiv="Content-Language" content="fr" />
+            <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1;requiresActiveX=true" />
+            <meta name="viewport" content="width=device-width" />
+            <meta name="date" content="2022-05-01T10:19:19+02:00" />
+            <meta name="Content-Language" content="fr" />
+            <meta name="robots" content="INDEX,FOLLOW, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+            <meta name="verification" content="e902066ae4d3ac1e27e69e34c04ad52a" />
+            <meta name="p:domain_verify" content="931efcd2643ba6883636d7992599c282" />
+            <meta name="dailymotion-domain-verification" content="dm6mf4vkz8so1qlj3" />
+                <meta property="og:site_name" content="CNET France" />
+            <meta property="og:title" content="Elon Musk et Twitter ont conclu un accord  - CNET France" />
+            <meta property="og:type" content="article" />
+            <meta property="og:image" content="https://d1fmx1rbmqrxrr.cloudfront.net/cnet/i/edit/2021/01/elon-musk-fortune-mondiale-big.jpg" />
+            <meta property="og:url" content="https://www.cnetfrance.fr/news/elon-musk-et-twitter-ont-conclu-un-accord-39941045.htm" />
+            <meta property="og:description" content="Le grand patron a d&eacute;j&agrave; &eacute;mis des id&eacute;es sur les changements qu&#039;il souhaite impulser en prenant les commandes de Twitter. " />
+                <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:creator" content="cnetfrance" />
+            <meta name="twitter:site" content="cnetfrance" />
+            <meta name="twitter:title" content="Elon Musk et Twitter ont conclu un accord  - CNET France" />
+            <meta name="twitter:description" content="Le grand patron a d&eacute;j&agrave; &eacute;mis des id&eacute;es sur les changements qu&#039;il souhaite impulser en prenant les commandes de Twitter. " />
+            <meta name="twitter:url" content="https://www.cnetfrance.fr/news/elon-musk-et-twitter-ont-conclu-un-accord-39941045.htm" />
+            <meta name="twitter:image" content="https://d1fmx1rbmqrxrr.cloudfront.net/cnet/i/edit/2021/01/elon-musk-fortune-mondiale-big.jpg" />
+                            <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+                                <link sizes="180x180" rel="apple-touch-icon" href="/frontend/images/apple-touch-icon.png" />
+                                <link types="image/png" sizes="16x16" rel="icon" href="/favicon-32x32.png" />
+                                <link color="#e71d1d" rel="mask-icon" href="/safari-pinned-tab.svg" />
+                                <link rel="amphtml" href="https://www.cnetfrance.fr/amp/news/elon-musk-et-twitter-ont-conclu-un-accord-39941045.htm" />
+                                <link rel="canonical" href="https://www.cnetfrance.fr/news/elon-musk-et-twitter-ont-conclu-un-accord-39941045.htm" />
+            <style>
+:root
+{
+    --cnet-main: #E71D1D;
+    --cnet-secondary-orange: #FF4A00;
+}
+</style>                        <link rel="stylesheet" type="text/css" href="/min-css/main.desktop.css?v=202204261200" />
+                    <link rel="stylesheet" type="text/css" href="/min-css/components.css?v=202204261200" />
+                    <link rel="stylesheet" type="text/css" href="/min-css/fonts/fontface.css?v=202204261200" />
+                    <link rel="stylesheet" type="text/css" href="/min-css/landing.desktop.css?v=202204261200" />
+                    <link rel="stylesheet" type="text/css" href="/min-css/alert-corner2.css?v=202204261200" />
+                    <link rel="stylesheet" type="text/css" href="/min-css/cnet.landing.desktop.css?v=202204261200" media="screen" />
+                    <link rel="stylesheet" type="text/css" href="/min-css/article.desktop.css?v=202204261200" media="screen" />
+                    <link rel="stylesheet" type="text/css" href="/min-css/single.desktop.css?v=202204261200" media="screen" />
+                    <link rel="stylesheet" type="text/css" href="/min-css/wireframe.desktop.css?v=202204261200" media="screen" />
+                <script type="text/javascript">
+        
+        (function (d) {
+            var config = {
+                    kitId: 'ekz8qya',
+                    scriptTimeout: 3000,
+                    async: false
+                },
+                h = d.documentElement, t = setTimeout(function () {
+                    h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+                }, config.scriptTimeout), tk = d.createElement("script"), f = false,
+                s = d.getElementsByTagName("script")[0], a;
+            h.className += " wf-loading";
+            tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+            tk.async = true;
+            tk.onload = tk.onreadystatechange = function () {
+                a = this.readyState;
+                if (f || a && a != "complete" && a != "loaded") return;
+                f = true;
+                clearTimeout(t);
+                try {
+                    Typekit.load(config)
+                } catch (e) {
+                }
+            };
+            s.parentNode.insertBefore(tk, s)
+        })(document);
+        
+        var envDev;
+        envDev = false;    </script>
+
+                        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            
+                                        <script type="text/javascript" src="/frontend/core/js/external/modernizr-custom.2.0.6.js?v=202204261200"></script>
+                            <script type="text/javascript" src="/frontend/core/js/cbsi/lazyLoading.js?v=202204261200"></script>
+                            <script type="text/javascript" src="/min-js/jquery.cookie.1.4.js?v=202204261200"></script>
+                            <script type="text/javascript" src="/min-js/alert-corner-ajax.js?v=202204261200"></script>
+                        <script type="text/javascript" src="/min-js/external/modernizr.js?v=202204261200"></script>
+                <script type="text/javascript">
+        players = [];
+    </script>
+    <script>window.pegasusConf = {"slots":"native_home_dynamic,banner_atf,300_btf,300_atf,300_mtf,native_seealso_right","params":{"site":"cnetfrance","keywords":"content_keywords=twitter;content_keywords=twitter;platform=desktop;content_class=rg;contenttype=article;story=39941045;date=04-2022;section=news;subsection=internet;ref=google;new_visitor=1","traffic":"organic","section":"section_news"}};</script>
+<script type="text/javascript" src="https://pegasus.unifygroup.com/lib/pegasus.min.js" async></script>
+    
+            <script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","name":"CNET France","alternateName":"La high-tech au quotidien","url":"https:\/\/www.cnetfrance.fr","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.cnetfrance.fr\/rechercher\/{search_term_string}.htm","query-input":"required name=search_term_string"}}</script>    <script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"Organization","name":"CNET France","url":"https:\/\/www.cnetfrance.fr\/","logo":{"@type":"ImageObject","author":"CNET France","url":"https:\/\/d1fmx1rbmqrxrr.cloudfront.net\/cnet\/i\/logo\/cnet-logo-600-red.png","contentUrl":"https:\/\/d1fmx1rbmqrxrr.cloudfront.net\/cnet\/i\/logo\/cnet-logo-600-red.png","description":"CNET France logo","name":"CNET France logo"},"sameAs":["https:\/\/twitter.com\/cnetfrance","https:\/\/www.facebook.com\/cnetfrance","https:\/\/www.youtube.com\/user\/CNETfrance","https:\/\/www.linkedin.com\/company\/cnet-france\/","https:\/\/flipboard.com\/@cnetfrance\/cnet-france-sd6m1q4oz","https:\/\/www.pinterest.fr\/CNETFrance\/"]}</script>
+</head>
+<body id="cnetfr"
+      class="touch-disabled news not-home not-logged-in" data-ad-page-id="1156517"
+      data-ad-target="">
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7WKPN"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<input type="hidden" id="site_section" name="site_section" value="news"/>
+
+<header id="rbHeader" class="page-header">
+    <div id="secondary">
+        <div class="text-link-top">
+            <span class="textTop">
+                                    <span class="textTop1">
+                        <strong>Comparatif :</strong>
+                        <a href="https://www.cnetfrance.fr/produits/les-meilleurs-smartphones-39368049.htm">les meilleurs smartphones de 2022</a>
+                    </span>
+                                                    <span>
+                        <strong style="top:9px">Fibre :</strong>
+                        <a href="https://www.cnetfrance.fr/produits/fibre-optique-comparatif-guide-meilleure-offre-39847408.htm">le meilleur forfait internet du moment</a>
+                    </span>
+                            </span>
+        </div>
+        <div id="socialHeader">
+            <span>Restez connecté avec nous</span>
+            <div class="socialWrapper">
+                <a class="social-menu-facebook" href="https://www.facebook.com/cnetfrance">facebook</a>
+                <a class="social-menu-twitter" href="https://twitter.com/cnetfrance">twitter</a>
+                <a class="social-menu-flipboard" href="https://flipboard.com/@cnetfrance/cnet-france-sd6m1q4oz">Flipboard</a>
+            </div>
+        </div>
+    </div>
+    <div class="fixation" data-toggle="fixate">
+        <div id="primary">
+            <div>
+                <a id="rbLogo" href="/">
+                    <img src="/images/logo/logo-horizontal-redx1.png" alt="CNET France">
+                </a>
+            </div>
+            <form id="search" method="get" action="/rechercher/" class="col-3 headerSearchForm">
+                <div class="searchBar">
+                    <input type="text" placeholder="Rechercher sur CNET" id="primarySearch" name="q"><button type="submit" class="searchButton" value="Search"></button>
+                </div>
+            </form>
+
+            <nav id="primaryNav" section="brandnav" data-endpoint="/component/load/xhr/">
+                                                                                                <div class="menu double" id="newsMenu" data-component="touchMenuHover">
+                        <a class="menuHead" data-trigger="menu" href="/news/">News</a>
+                                                    <div class="menuWrapper">
+                                <nav>
+                                    <div class="navWrapper" data-component="headerMenu" >
+                                        <ul class="topCategories"><li class="hed">Categories</li>
+                                                                                            <li class="topCat active" data-menu-cat="gadget" data-section="news">
+                                                    <a href="/news/gadget/">Gadget</a>
+                                                </li>
+                                                                                            <li class="topCat" data-menu-cat="home-cinema" data-section="news">
+                                                    <a href="/news/home-cinema/">Home Cinéma</a>
+                                                </li>
+                                                                                            <li class="topCat" data-menu-cat="internet" data-section="news">
+                                                    <a href="/news/internet/">Internet</a>
+                                                </li>
+                                                                                            <li class="topCat" data-menu-cat="jeu" data-section="news">
+                                                    <a href="/news/jeu/">Jeu</a>
+                                                </li>
+                                                                                            <li class="topCat" data-menu-cat="mobilite" data-section="news">
+                                                    <a href="/news/mobilite/">Mobilité</a>
+                                                </li>
+                                                                                            <li class="topCat" data-menu-cat="musique" data-section="news">
+                                                    <a href="/news/musique/">Musique</a>
+                                                </li>
+                                                                                            <li class="topCat" data-menu-cat="pc-peripheriques" data-section="news">
+                                                    <a href="/news/pc-peripheriques/">PC et périphériques</a>
+                                                </li>
+                                                                                            <li class="topCat" data-menu-cat="photo-video" data-section="news">
+                                                    <a href="/news/photo-video/">Photo-vidéo</a>
+                                                </li>
+                                                                                            <li class="topCat" data-menu-cat="cartech-news" data-section="news">
+                                                    <a href="/cartech/news/">News Cartech</a>
+                                                </li>
+                                                                                            <li class="topCat" data-menu-cat="videos" data-section="news">
+                                                    <a href="/videos/">Vidéos</a>
+                                                </li>
+                                                                                    </ul>
+                                        <div class="itemsWrapper"></div>
+                                    </div>
+                                </nav>
+                            </div>
+                                            </div>
+                                                                                                                                            <div class="menu double" id="meilleursMenu" data-component="touchMenuHover">
+                        <a class="menuHead" data-trigger="menu" href="/produits/guides/">Meilleurs</a>
+                                            </div>
+                                                                                                                                            <div class="menu double" id="produitsMenu" data-component="touchMenuHover">
+                        <a class="menuHead" data-trigger="menu" href="/produits/">Tests</a>
+                                                    <div class="menuWrapper">
+                                <nav>
+                                    <div class="navWrapper" data-component="headerMenu" >
+                                        <ul class="topCategories"><li class="hed">Categories</li>
+                                                                                            <li class="topCat active" data-menu-cat="telephones-mobiles" data-section="produits">
+                                                    <a href="/produits/telephones-mobiles/">Smartphones</a>
+                                                </li>
+                                                                                            <li class="topCat" data-menu-cat="pc-portables-netbooks" data-section="produits">
+                                                    <a href="/produits/pc-portables-netbooks/">PC portables / Tablettes</a>
+                                                </li>
+                                                                                            <li class="topCat" data-menu-cat="appareils-photo-numeriques" data-section="produits">
+                                                    <a href="/produits/appareils-photo-numeriques/">Photo / vidéo</a>
+                                                </li>
+                                                                                            <li class="topCat" data-menu-cat="audio" data-section="produits">
+                                                    <a href="/produits/audio/">Audio</a>
+                                                </li>
+                                                                                            <li class="topCat" data-menu-cat="tv-hd" data-section="produits">
+                                                    <a href="/produits/tv-hd/">TV / Smart TV</a>
+                                                </li>
+                                                                                            <li class="topCat" data-menu-cat="logiciels" data-section="produits">
+                                                    <a href="/produits/logiciels/">Applications / OS</a>
+                                                </li>
+                                                                                            <li class="topCat" data-menu-cat="lecteurs-blu-ray-hd" data-section="produits">
+                                                    <a href="/produits/lecteurs-blu-ray-hd/">Home-Cinéma / Blu-Ray</a>
+                                                </li>
+                                                                                            <li class="topCat" data-menu-cat="pc-desktops-nettops" data-section="produits">
+                                                    <a href="/produits/pc-desktops-nettops/">PC / Mac</a>
+                                                </li>
+                                                                                            <li class="topCat" data-menu-cat="jeu" data-section="produits">
+                                                    <a href="/produits/jeu/">Jeu vidéo / consoles & accessoires</a>
+                                                </li>
+                                                                                            <li class="topCat" data-menu-cat="ecrans-lcd" data-section="produits">
+                                                    <a href="/produits/ecrans-lcd/">Ecrans PC / 3D / Jeu</a>
+                                                </li>
+                                                                                            <li class="topCat" data-menu-cat="imprimantes-multifonctions" data-section="produits">
+                                                    <a href="/produits/imprimantes-multifonctions/">Imprimantes</a>
+                                                </li>
+                                                                                            <li class="topCat" data-menu-cat="gps" data-section="produits">
+                                                    <a href="/produits/gps/">GPS</a>
+                                                </li>
+                                                                                    </ul>
+                                        <div class="itemsWrapper"></div>
+                                    </div>
+                                </nav>
+                            </div>
+                                            </div>
+                                                                                                                                            <div class="menu double" id="cultureMenu" data-component="touchMenuHover">
+                        <a class="menuHead" data-trigger="menu" href="/special/magazine-4000237470.htm">Culture</a>
+                                                    <div class="menuWrapper">
+                                <nav>
+                                    <div class="navWrapper" data-component="headerMenu" style="width:180px">
+                                        <ul class="topCategories"><li class="hed">Categories</li>
+                                                                                            <li class="topCat active"  data-section="culture">
+                                                    <a href="/magazine/culture.htm">Culture</a>
+                                                </li>
+                                                                                            <li class="topCat"  data-section="culture">
+                                                    <a href="/magazine/societe-politique.htm">Société / Politique</a>
+                                                </li>
+                                                                                            <li class="topCat"  data-section="culture">
+                                                    <a href="/magazine/auto-transport.htm">Auto / Transport</a>
+                                                </li>
+                                                                                            <li class="topCat"  data-section="culture">
+                                                    <a href="/magazine/science-espace.htm">Science / Espace</a>
+                                                </li>
+                                                                                            <li class="topCat"  data-section="culture">
+                                                    <a href="/magazine/intelligence-artificielle.htm">Intelligence artificielle</a>
+                                                </li>
+                                                                                    </ul>
+                                        <div class="itemsWrapper"></div>
+                                    </div>
+                                </nav>
+                            </div>
+                                            </div>
+                                                                                                                                                                    <div class="menu double" id="bon-planMenu" data-component="touchMenuHover">
+                        <a class="menuHead" data-trigger="menu" href="/bon-plan/">Promos et services</a>
+                                                    <div class="menuWrapper">
+                                <nav>
+                                    <div class="navWrapper" data-component="headerMenu" style="width:180px">
+                                        <ul class="topCategories"><li class="hed">Categories</li>
+                                                                                            <li class="topCat active"  data-section="bon-plan">
+                                                    <a href="/produits/comparatif-meilleur-forfait-mobile-39845518.htm">Meilleur forfait mobile</a>
+                                                </li>
+                                                                                            <li class="topCat"  data-section="bon-plan">
+                                                    <a href="https://www.cnetfrance.fr/comparateur-forfait-mobile/">Comparateur forfait mobile</a>
+                                                </li>
+                                                                                            <li class="topCat"  data-section="bon-plan">
+                                                    <a href="/produits/fibre-optique-comparatif-guide-meilleure-offre-39847408.htm">Meilleur forfait fibre</a>
+                                                </li>
+                                                                                            <li class="topCat"  data-section="bon-plan">
+                                                    <a href="https://www.cnetfrance.fr/comparateur-box-internet/">Comparateur box internet</a>
+                                                </li>
+                                                                                            <li class="topCat"  data-section="bon-plan">
+                                                    <a href="/produits/les-meilleurs-vpn-39882441.htm">Meilleurs VPN</a>
+                                                </li>
+                                                                                            <li class="topCat"  data-section="bon-plan">
+                                                    <a href="/produits/comparatif-meilleure-banque-en-ligne-39903825.htm">Meilleures banques en ligne</a>
+                                                </li>
+                                                                                            <li class="topCat"  data-section="bon-plan">
+                                                    <a href="/produits/comparatif-meilleure-neobanque-gratuite-39895553.htm">Meilleures néobanques</a>
+                                                </li>
+                                                                                    </ul>
+                                        <div class="itemsWrapper"></div>
+                                    </div>
+                                </nav>
+                            </div>
+                                            </div>
+                                                                                                                                            <div class="menu double" id="forumsMenu" data-component="touchMenuHover">
+                        <a class="menuHead" data-trigger="menu" href="https://forums.cnetfrance.fr">Forums</a>
+                                                    <div class="menuWrapper">
+                                <nav>
+                                    <div class="navWrapper" data-component="headerMenu" style="width:180px">
+                                        <ul class="topCategories"><li class="hed">Categories</li>
+                                                                                            <li class="topCat active"  data-section="forums">
+                                                    <a href="https://forums.cnetfrance.fr/conseils-avant-achat">Conseils avant achat</a>
+                                                </li>
+                                                                                            <li class="topCat"  data-section="forums">
+                                                    <a href="https://forums.cnetfrance.fr/materiel-informatique-composants-et-peripheriques">Matériel informatique</a>
+                                                </li>
+                                                                                            <li class="topCat"  data-section="forums">
+                                                    <a href="https://forums.cnetfrance.fr/logiciels-jeux-et-applications-pour-ordinateur">Logiciels</a>
+                                                </li>
+                                                                                            <li class="topCat"  data-section="forums">
+                                                    <a href="https://forums.cnetfrance.fr/internet-web-et-reseaux">Internet et réseaux</a>
+                                                </li>
+                                                                                            <li class="topCat"  data-section="forums">
+                                                    <a href="https://forums.cnetfrance.fr/microsoft-windows-11">Windows 11</a>
+                                                </li>
+                                                                                            <li class="topCat"  data-section="forums">
+                                                    <a href="https://forums.cnetfrance.fr/microsoft-windows-10">Windows 10</a>
+                                                </li>
+                                                                                            <li class="topCat"  data-section="forums">
+                                                    <a href="https://forums.cnetfrance.fr/windows-7-8-et-anciens-systemes-microsoft">Windows 7 et 8</a>
+                                                </li>
+                                                                                            <li class="topCat"  data-section="forums">
+                                                    <a href="https://forums.cnetfrance.fr/macos-linux-et-autres-systemes">MacOS, Linux</a>
+                                                </li>
+                                                                                            <li class="topCat"  data-section="forums">
+                                                    <a href="https://forums.cnetfrance.fr/desinfection-pc-virus-malwares-et-logiciels-indesirables">Désinfection PC</a>
+                                                </li>
+                                                                                            <li class="topCat"  data-section="forums">
+                                                    <a href="https://forums.cnetfrance.fr/multimedia-photo-musique-et-audio-tv-et-video">Multimédia</a>
+                                                </li>
+                                                                                            <li class="topCat"  data-section="forums">
+                                                    <a href="https://forums.cnetfrance.fr/android-smartphones-tablettes-montres-etc">Android</a>
+                                                </li>
+                                                                                            <li class="topCat"  data-section="forums">
+                                                    <a href="https://forums.cnetfrance.fr/iphone-ipad-et-autres-appareils-apple">iPhone et iPad</a>
+                                                </li>
+                                                                                            <li class="topCat"  data-section="forums">
+                                                    <a href="https://forums.cnetfrance.fr/objets-connectes-mobilite-telephonie-gps-etc">Objets connectés</a>
+                                                </li>
+                                                                                            <li class="topCat"  data-section="forums">
+                                                    <a href="https://forums.cnetfrance.fr/informatique-generale-et-autres-discussions-high-tech">Informatique générale</a>
+                                                </li>
+                                                                                            <li class="topCat"  data-section="forums">
+                                                    <a href="https://forums.cnetfrance.fr/le-cafe-d-en-bas">Le café d'en bas</a>
+                                                </li>
+                                                                                            <li class="topCat"  data-section="forums">
+                                                    <a href="https://forums.cnetfrance.fr/forum/tutoriels-et-astuces-de-la-communaute">Tutoriels et astuces</a>
+                                                </li>
+                                                                                    </ul>
+                                        <div class="itemsWrapper"></div>
+                                    </div>
+                                </nav>
+                            </div>
+                                            </div>
+                                                                                                                                                                    <div class="menu double" id="telechargerMenu" data-component="touchMenuHover">
+                        <a class="menuHead" data-trigger="menu" href="/telecharger/">Télécharger</a>
+                                            </div>
+                
+                <div id="headerLogin" class="menu" data-component="touchMenuHover">
+                    <div class="menuHead" data-trigger="menu">
+                                                    <span data-user-var="userName">Se connecter</span>
+                            <div class="user-avatar" data-user-var="avatar"></div>
+                                            </div>
+                    <div class="menuWrapper">
+                        <nav>
+                                                            <ul class="topCategories logged-out">
+                                    <li>
+                                        <a href="/membres/" title="Se connecter" data-modal-ajax="/membres/login.htm" data-referer="https://www.cnetfrance.fr/news/elon-musk-et-twitter-ont-conclu-un-accord-39941045.htm">Se connecter à CNET</a>
+                                    </li>
+                                    <li class="social-login">
+                                        <fb:login-button class="fb-login-btn" width="450" scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+                                    </li>
+                                                                        <li>
+                                        <a href="https://accounts.google.com/o/oauth2/auth?response_type=code&redirect_uri=https%3A%2F%2Fwww.cnetfrance.fr&client_id=9369158573-69eq7pavfhmb5uf6iob03bu1gff3fduo.apps.googleusercontent.com&scope=email+profile&access_type=online&approval_prompt=auto" title="Se connecter avec Google"><img src="https://d1fmx1rbmqrxrr.cloudfront.net/cnet/i/icon/btn_google_signin_light_normal_web_fr.png" alt="Se connecter avec Google" ></a>
+                                    </li>
+                                                                        <li>
+                                        <a href="/membres/" title="S'enregistrer" data-modal-ajax="/membres/create_account.htm" data-referer="https://www.cnetfrance.fr/news/elon-musk-et-twitter-ont-conclu-un-accord-39941045.htm">S'enregistrer</a>
+                                    </li>
+                                </ul>
+                                                    </nav>
+                    </div>
+                </div>
+                <div class="menu" id="editionMenu" data-component="touchMenuHover">
+                    <span class="menuHead" data-trigger="menu"><span id="selectedEdition">FR</span></span>
+                    <div class="menuWrapper">
+                        <nav>
+                            <ul class="topCategories" data-component="editionToggler">
+                                <li class="hed">Autres editions</li>
+                                <li><a target="_blank" href="https://www.cnet.com/">United States</a></li>
+                                <li><a data-edition="uk" target="_blank" href="https://www.cnet.com/">United Kingdom</a></li>
+                                <li><a target="_blank" href="https://www.cnet.com.au/">Australia</a></li>
+                                <li><a target="_blank" href="http://www.cnetnews.com.cn/">China</a></li>
+                                <li><a target="_blank" href="http://www.cnet.de/">Germany</a></li>
+                                <li><a target="_blank" href="https://japan.cnet.com/">Japan</a></li>
+                                <li><a target="_blank" href="http://www.cnet.co.kr/">Korea</a></li>
+                                <li><a target="_blank" href="https://www.cnet.com/es/">CNET en Español</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+<div id="page" class="skinContainer">
+        <div id="elu" style="width:100%; height:1px;overflow:visible;position: absolute; top: 0; left: 0;">
+        
+    </div>
+
+            <div id="ads_lb" class="container ads_lb">
+            <div class="row">
+                <div style="text-align:center">
+                    <!-- ad_type : leaderboard = formatId : banner_atf -->
+<div class="ad-mention">publicit&eacute;</div>
+<div data-ad="banner_atf"></div>
+
+                </div>
+            </div>
+        </div>
+    
+    <div id="rbContent" class="container">
+                <div class="container">
+                                                                                                                                                                                                                                    <script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"NewsArticle","headline":"Elon Musk et Twitter ont conclu un accord ","description":"Le grand patron a d\u00e9j\u00e0 \u00e9mis des id\u00e9es sur les changements qu'il souhaite impulser en prenant les commandes de Twitter. ","keywords":"Twitter, Twitter","url":"https:\/\/www.cnetfrance.fr\/news\/elon-musk-et-twitter-ont-conclu-un-accord-39941045.htm","datePublished":"2022-04-26T08:16:01+02:00","dateModified":"2022-04-26T08:16:01+02:00","articleBody":"\r\n\r\n<p>\r\n    Cette fois c\u2019est officiel, Elon Musk est sur le point de prendre le\r\n    contr\u00f4le de Twitter. L\u2019accord \u00e0 environ 44 milliards de dollars entre le\r\n    milliardaire et le r\u00e9seau social a \u00e9t\u00e9\r\n    <a href=\"https:\/\/www.prnewswire.com\/news-releases\/elon-musk-to-acquire-twitter-301532245.html\" target=\"_blank\" title=\"\">\r\n        officialis\u00e9<\/a> en fin de journ\u00e9e. Elon Musk versera aux actionnaires 54,20 dollars par\r\n    action, ce qui repr\u00e9sente une prime de 38 % par rapport au cours de cl\u00f4ture\r\n    de l'action Twitter le 1er avril, date \u00e0 laquelle le magnat a r\u00e9v\u00e9l\u00e9 qu'il\r\n    d\u00e9tenait une participation de 9 % dans l'entreprise.\r\n<\/p>\r\n<p>\r\n    D\u00e9but avril,\r\n    <a href=\"https:\/\/www.cnetfrance.fr\/news\/elon-musk-possede-desormais-pres-de-10-des-parts-de-twitter-39940021.htm\" target=\"_blank\" title=\"\">\r\n        Elon Musk<\/a>, qui dirige Tesla, SpaceX et d'autres entreprises, a fait une offre non\r\n    sollicit\u00e9e pour acqu\u00e9rir le r\u00e9seau social dont il est l\u2019un des membres les\r\n    plus populaires avec plus de 84 millions d\u2019abonn\u00e9s. Alors que l'on\r\n    s'attendait initialement \u00e0 ce que Twitter rejette l'offre en ayant recours\r\n    \u00e0 la solution de la \u00ab pilule empoisonn\u00e9e \u00bb, la soci\u00e9t\u00e9 se serait finalement\r\n    montr\u00e9e\r\n    <a href=\"https:\/\/www.cnetfrance.fr\/news\/twitter-reexaminerait-l-opa-de-43-milliards-de-dollars-d-elon-musk-39940989.htm\" target=\"_blank\" title=\"\">\r\n        r\u00e9ceptive<\/a> \u00e0 l'id\u00e9e apr\u00e8s qu\u2019Elon Musk ait expos\u00e9 son plan de financement, qui inclut\r\n    le soutien de la banque d'investissement Morgan Stanley.\r\n<\/p><div id=\"inreadContainer\" data-ad=\"300_mtf\"><\/div>\r\n<p>\r\n    L'op\u00e9ration, qui a \u00e9t\u00e9 approuv\u00e9e \u00e0 l'unanimit\u00e9 par le conseil\r\n    d'administration de Twitter, devrait \u00eatre conclue dans le courant de\r\n    l'ann\u00e9e. Elle doit encore \u00eatre approuv\u00e9e par les actionnaires de Twitter.\r\n<\/p>\r\n<p>\r\n    Cet accord couronne une relation tumultueuse entre Elon Musk et Twitter, et\r\n    soul\u00e8ve des questions sur la trajectoire du r\u00e9seau social. Par le pass\u00e9,\r\n    Twitter a eu du mal \u00e0 d\u00e9velopper \u00e0 la fois sa base d'utilisateurs et ses\r\n    ventes de publicit\u00e9s, alors qu'il \u00e9tait en concurrence avec Facebook et\r\n    Google. Twitter s'est fix\u00e9 pour objectif d'atteindre 7,5 milliards de\r\n    dollars de chiffre d\u2019affaires et 315 millions d'utilisateurs d'ici 2023.\r\n<\/p>\r\n<h2>\r\n    Elon Musk se fait le chantre de la libert\u00e9 d\u2019expression\r\n<\/h2>\r\n<p>\r\n    Elon Musk est un utilisateur assidu de Twitter, mais aussi l'un de ses plus\r\n    virulents d\u00e9tracteurs. Il a publiquement remis en cause la fa\u00e7on dont\r\n    Twitter mod\u00e8re le contenu, sondant \u00e0 plusieurs reprises ses followers sur\r\n    les\r\n    <a href=\"https:\/\/www.cnetfrance.fr\/news\/twitter-les-4-changements-qu-elon-musk-pourrait-apporter-39940243.htm\" target=\"_blank\" title=\"\">\r\n        changements<\/a> qui pourraient \u00eatre apport\u00e9s au r\u00e9seau social.\r\n<\/p>\r\n<p>\r\n    \u00ab\r\n    <i>\r\n        La libert\u00e9 d'expression est le fondement d'une d\u00e9mocratie qui\r\n        fonctionne, et Twitter est la place publique num\u00e9rique o\u00f9 sont\r\n        d\u00e9battues des questions vitales pour l'avenir de l'humanit\u00e9\r\n    <\/i>\r\n    \u00bb, a d\u00e9clar\u00e9 Elon Musk. \u00ab\r\n    <i>\r\n        Je veux aussi rendre Twitter meilleur que jamais en am\u00e9liorant le\r\n        produit avec de nouvelles fonctionnalit\u00e9s, en rendant les algorithmes\r\n        open source pour augmenter la confiance, en luttant contre les robots\r\n        spammeurs et en authentifiant tous les humains. Twitter a un \u00e9norme\r\n        potentiel, je suis impatient de travailler avec l'entreprise et la\r\n        communaut\u00e9 des utilisateurs pour le lib\u00e9rer.\r\n    <\/i>\r\n    \u00bb\r\n<\/p>\r\n<p>\r\n    Twitter a des r\u00e8gles pour contrer la\r\n    <a href=\"https:\/\/www.cnetfrance.fr\/news\/la-desinformation-aurait-chute-suite-au-bannissement-de-donald-trump-par-twitter-39916341.htm\" target=\"_blank\" title=\"\">\r\n        d\u00e9sinformation<\/a> li\u00e9e aux \u00e9lections et \u00e0 la Covid. Le r\u00e9seau social a banni certains\r\n    utilisateurs, dont l'ancien pr\u00e9sident\r\n    <a href=\"https:\/\/www.cnetfrance.fr\/news\/facebook-twitter-et-snapchat-bloquent-les-comptes-de-donald-trump-apres-les-violences-au-capitole-39915731.htm\" target=\"_blank\" title=\"\">\r\n        Donald Trump<\/a>, pour incitation \u00e0 la violence. Une politique qui a suscit\u00e9 des d\u00e9bats\r\n    houleux quant aux limites de la libert\u00e9 d'expression sur ces plateformes.\r\n    Les entreprises priv\u00e9es peuvent fixer leurs propres r\u00e8gles sur ce qui est\r\n    autoris\u00e9 ou non sur leurs plateformes. Le premier amendement de la\r\n    Constitution am\u00e9ricaine, qui garantit la libert\u00e9 d'expression, emp\u00eache le\r\n    gouvernement de censurer les discours, mais il ne s'applique pas aux\r\n    entreprises telles que Twitter.\r\n<\/p>\r\n<p>\r\n    Outre un assouplissement de la mod\u00e9ration, Elon Musk veut que Twitter lutte\r\n    contre les escroqueries li\u00e9es aux cryptomonnaies, ouvre son algorithme et\r\n    propose une fonction permettant de modifier un tweet apr\u00e8s publication.\r\n<\/p>\r\n<p>\r\n    Demeur\u00e9 silencieux depuis la tentative de prise de contr\u00f4le par Elon Musk,\r\n    le PDG de Twitter, Parag Agrawal a estim\u00e9 lundi que l'entreprise \u00ab\r\n    <i>\r\n        a un objectif et une pertinence qui ont un impact sur le monde entier\r\n    <\/i>\r\n    \u00bb. Il a ajout\u00e9 qu'il \u00e9tait \u00ab\r\n    <i>\r\n        profond\u00e9ment fier de nos \u00e9quipes et inspir\u00e9 par un travail qui n'a\r\n        jamais \u00e9t\u00e9 aussi important.\r\n    <\/i>\r\n    \u00bb\r\n<\/p>\r\n<p>\r\n    Bret Taylor, le pr\u00e9sident du conseil d'administration de Twitter, a indiqu\u00e9\r\n    que le financement qu\u2019Elon Musk a obtenu pour l'op\u00e9ration a finalement\r\n    contribu\u00e9 \u00e0 faire pencher la balance en sa faveur. \u00ab\r\n    <i>\r\n        Nous pensons que c'est la meilleure voie \u00e0 suivre pour les actionnaires\r\n        de Twitter\r\n    <\/i>\r\n    \u00bb, a-t-il conclu.\r\n<\/p>\r\n<p>\r\n    <i>\r\n        <a href=\"https:\/\/www.cnet.com\/news\/social-media\/elon-musk-and-twitter-have-a-deal\/\" target=\"_blank\" title=\"\">\r\n            Article de CNET.com adapt\u00e9 par CNETFrance\r\n        <\/a>\r\n    <\/i>\r\n<\/p>\r\n<p>\r\n    Image : NORAD and USNORTHCOM Public Affairs, DP<\/p>\r\n<span><\/span>\r\n\r\n\r\n","image":{"@type":"ImageObject","author":"CNET France","url":"https:\/\/d1fmx1rbmqrxrr.cloudfront.net\/cnet\/optim\/i\/edit\/2021\/01\/elon-musk-fortune-mondiale-big__w1200.jpg","contentUrl":"https:\/\/d1fmx1rbmqrxrr.cloudfront.net\/cnet\/optim\/i\/edit\/2021\/01\/elon-musk-fortune-mondiale-big__w1200.jpg","description":"Elon Musk et Twitter ont conclu un accord  main image","name":"Elon Musk et Twitter ont conclu un accord  image","width":"1200","height":"900"},"publisher":{"@type":"Organization","name":"CNET France","url":"https:\/\/www.cnetfrance.fr","logo":{"@type":"ImageObject","author":"CNET France","url":"https:\/\/d1fmx1rbmqrxrr.cloudfront.net\/cnet\/i\/logo\/cnet-logo-600-red.png","contentUrl":"https:\/\/d1fmx1rbmqrxrr.cloudfront.net\/cnet\/i\/logo\/cnet-logo-600-red.png","description":"CNET France logo","name":"CNET France logo"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.cnetfrance.fr\/news\/elon-musk-et-twitter-ont-conclu-un-accord-39941045.htm"},"speakable":{"@type":"SpeakableSpecification","xpath":["\/html\/head\/title","\/html\/head\/meta[@name='description']\/@content"]},"author":{"@type":"Person","name":"Marc Zaffagni avec CNET.com","url":"https:\/\/www.cnetfrance.frhttps:\/\/www.cnet.com\/"}}</script>
+<div id="main">
+    <input type="hidden" id="content_news" name="content_news" value="content_news" />
+    <input type="hidden" id="current_channel_id" name="current_channel_id" value="39001287" />
+    
+    <div class="row">
+        <div class="col-12">
+                                                                                                                                                                                    <script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":0,"item":{"@id":"\/","name":"CNET France"}},{"@type":"ListItem","position":1,"item":{"@id":"\/news\/","name":"News"}},{"@type":"ListItem","position":2,"item":{"@id":"\/news\/internet\/","name":"Internet"}},{"@type":"ListItem","position":3,"item":{"@id":"\/news\/elon-musk-et-twitter-ont-conclu-un-accord-39941045.htm","name":"Elon Musk et Twitter ont conclu un accord "}}]}</script>            <div class="breadcrumb">
+                                                <div class="bc-child">
+                                                <a href="/">
+                            <span>CNET France</span>
+                        </a>
+                                            </div>
+                                                                <div class="bc-child">
+                                                <a href="/news/">
+                            <span>News</span>
+                        </a>
+                                            </div>
+                                                                <div class="bc-child">
+                                                <a href="/news/internet/">
+                            <span>Internet</span>
+                        </a>
+                                            </div>
+                                                                <div class="bc-child">
+                                                    <span>Elon Musk et Twitter ont conclu un accord </span>
+                                            </div>
+                                                                                            </div>
+            </div>
+    </div>
+    <div class="row">
+        <div class="col-8">
+            
+            <article id="article-body" class="articleBody">
+                <header class="content-header content-header-lead">
+                                        <h1>Elon Musk et Twitter ont conclu un accord </h1>
+                    <p>Le grand patron a déjà émis des idées sur les changements qu'il souhaite impulser en prenant les commandes de Twitter. </p>
+                    <div id="article-info" class="row article-byline">
+    <ul>
+        <li>
+            Par
+                                                                                                                                                                                                                                                    <a class="author" href="https://www.cnet.com/">
+                        <span>Marc Zaffagni avec CNET.com</span>
+                    </a>
+                                                    </li>
+                <li>
+                            mardi 26 avril 2022 à 08:16
+                    </li>
+            </ul>
+</div>                    <ul class="socialBar sharebar inline-view" data-component="socialLinks" data-share-url="https://www.cnetfrance.fr/news/elon-musk-et-twitter-ont-conclu-un-accord-39941045.htm" data-share-title="Elon Musk et Twitter ont conclu un accord " data-share-description="Le grand patron a déjà émis des idées sur les changements qu'il souhaite impulser...">
+    <li class="comment-count">
+        <a href="#comments">
+            <div class="social-button-small comments">
+                <div class="icon icon-small-comments">comments</div>
+            </div>
+            <span class="count">0</span>
+        </a>
+    </li>
+
+    <li class="share-button">
+        <a data-share="facebook" data-counts="">
+            <div class="social-button-small facebook">
+                <div class="icon icon-small-facebook">facebook</div>
+            </div>
+            <span class="count"></span>
+        </a>
+    </li>
+
+    <li class="share-button">
+        <a data-share="twitter" data-counts="">
+            <div class="social-button-small twitter">
+                <div class="icon icon-small-twitter">twitter</div>
+            </div>
+            <span class="count"></span>
+        </a>
+    </li>
+    <li class="share-button">
+        <a href="https://share.flipboard.com/bookmarklet/popout?v=2&title=Elon+Musk+et+Twitter+ont+conclu+un+accord+&url=https%3A%2F%2Fwww.cnetfrance.fr%2Fnews%2Felon-musk-et-twitter-ont-conclu-un-accord-39941045.htm" style="padding-left: 0;" target="_blank">
+            <img src="https://cdn.flipboard.com/badges/flipboard_srrw.png" width="25" height="25" />
+        </a>
+    </li>
+</ul>                </header>
+
+                
+                <div class="article-main-body">
+                    <div class="row first-letter" data-use-autolinker="true">
+                        <p></p>
+                                                                                                                        <figure class="image pull-none image-full-width" section="shortcodeImage">
+                                        <span>
+                                            <picture>
+        <img src="https://d1fmx1rbmqrxrr.cloudfront.net/cnet/optim/i/edit/2021/01/elon-musk-fortune-mondiale-big__w770.jpg" style="width: 100%;" alt="Elon Musk et Twitter ont conclu un accord ">
+</picture>
+                                                                                    </span>
+                                    </figure>
+                                                                                                                                                                                                                                                                                                                                                                                                                                <p>
+
+<p>
+    Cette fois c’est officiel, Elon Musk est sur le point de prendre le
+    contrôle de Twitter. L’accord à environ 44 milliards de dollars entre le
+    milliardaire et le réseau social a été
+    <a href="https://www.prnewswire.com/news-releases/elon-musk-to-acquire-twitter-301532245.html" target="_blank" title="">
+        officialisé</a> en fin de journée. Elon Musk versera aux actionnaires 54,20 dollars par
+    action, ce qui représente une prime de 38 % par rapport au cours de clôture
+    de l'action Twitter le 1er avril, date à laquelle le magnat a révélé qu'il
+    détenait une participation de 9 % dans l'entreprise.
+</p>
+<p>
+    Début avril,
+    <a href="https://www.cnetfrance.fr/news/elon-musk-possede-desormais-pres-de-10-des-parts-de-twitter-39940021.htm" target="_blank" title="">
+        Elon Musk</a>, qui dirige Tesla, SpaceX et d'autres entreprises, a fait une offre non
+    sollicitée pour acquérir le réseau social dont il est l’un des membres les
+    plus populaires avec plus de 84 millions d’abonnés. Alors que l'on
+    s'attendait initialement à ce que Twitter rejette l'offre en ayant recours
+    à la solution de la « pilule empoisonnée », la société se serait finalement
+    montrée
+    <a href="https://www.cnetfrance.fr/news/twitter-reexaminerait-l-opa-de-43-milliards-de-dollars-d-elon-musk-39940989.htm" target="_blank" title="">
+        réceptive</a> à l'idée après qu’Elon Musk ait exposé son plan de financement, qui inclut
+    le soutien de la banque d'investissement Morgan Stanley.
+</p><div id="inreadContainer" data-ad="300_mtf"></div>
+<p>
+    L'opération, qui a été approuvée à l'unanimité par le conseil
+    d'administration de Twitter, devrait être conclue dans le courant de
+    l'année. Elle doit encore être approuvée par les actionnaires de Twitter.
+</p>
+<p>
+    Cet accord couronne une relation tumultueuse entre Elon Musk et Twitter, et
+    soulève des questions sur la trajectoire du réseau social. Par le passé,
+    Twitter a eu du mal à développer à la fois sa base d'utilisateurs et ses
+    ventes de publicités, alors qu'il était en concurrence avec Facebook et
+    Google. Twitter s'est fixé pour objectif d'atteindre 7,5 milliards de
+    dollars de chiffre d’affaires et 315 millions d'utilisateurs d'ici 2023.
+</p>
+<h2>
+    Elon Musk se fait le chantre de la liberté d’expression
+</h2>
+<p>
+    Elon Musk est un utilisateur assidu de Twitter, mais aussi l'un de ses plus
+    virulents détracteurs. Il a publiquement remis en cause la façon dont
+    Twitter modère le contenu, sondant à plusieurs reprises ses followers sur
+    les
+    <a href="https://www.cnetfrance.fr/news/twitter-les-4-changements-qu-elon-musk-pourrait-apporter-39940243.htm" target="_blank" title="">
+        changements</a> qui pourraient être apportés au réseau social.
+</p>
+<p>
+    «
+    <i>
+        La liberté d'expression est le fondement d'une démocratie qui
+        fonctionne, et Twitter est la place publique numérique où sont
+        débattues des questions vitales pour l'avenir de l'humanité
+    </i>
+    », a déclaré Elon Musk. «
+    <i>
+        Je veux aussi rendre Twitter meilleur que jamais en améliorant le
+        produit avec de nouvelles fonctionnalités, en rendant les algorithmes
+        open source pour augmenter la confiance, en luttant contre les robots
+        spammeurs et en authentifiant tous les humains. Twitter a un énorme
+        potentiel, je suis impatient de travailler avec l'entreprise et la
+        communauté des utilisateurs pour le libérer.
+    </i>
+    »
+</p>
+<p>
+    Twitter a des règles pour contrer la
+    <a href="https://www.cnetfrance.fr/news/la-desinformation-aurait-chute-suite-au-bannissement-de-donald-trump-par-twitter-39916341.htm" target="_blank" title="">
+        désinformation</a> liée aux élections et à la Covid. Le réseau social a banni certains
+    utilisateurs, dont l'ancien président
+    <a href="https://www.cnetfrance.fr/news/facebook-twitter-et-snapchat-bloquent-les-comptes-de-donald-trump-apres-les-violences-au-capitole-39915731.htm" target="_blank" title="">
+        Donald Trump</a>, pour incitation à la violence. Une politique qui a suscité des débats
+    houleux quant aux limites de la liberté d'expression sur ces plateformes.
+    Les entreprises privées peuvent fixer leurs propres règles sur ce qui est
+    autorisé ou non sur leurs plateformes. Le premier amendement de la
+    Constitution américaine, qui garantit la liberté d'expression, empêche le
+    gouvernement de censurer les discours, mais il ne s'applique pas aux
+    entreprises telles que Twitter.
+</p>
+<p>
+    Outre un assouplissement de la modération, Elon Musk veut que Twitter lutte
+    contre les escroqueries liées aux cryptomonnaies, ouvre son algorithme et
+    propose une fonction permettant de modifier un tweet après publication.
+</p>
+<p>
+    Demeuré silencieux depuis la tentative de prise de contrôle par Elon Musk,
+    le PDG de Twitter, Parag Agrawal a estimé lundi que l'entreprise «
+    <i>
+        a un objectif et une pertinence qui ont un impact sur le monde entier
+    </i>
+    ». Il a ajouté qu'il était «
+    <i>
+        profondément fier de nos équipes et inspiré par un travail qui n'a
+        jamais été aussi important.
+    </i>
+    »
+</p>
+<p>
+    Bret Taylor, le président du conseil d'administration de Twitter, a indiqué
+    que le financement qu’Elon Musk a obtenu pour l'opération a finalement
+    contribué à faire pencher la balance en sa faveur. «
+    <i>
+        Nous pensons que c'est la meilleure voie à suivre pour les actionnaires
+        de Twitter
+    </i>
+    », a-t-il conclu.
+</p>
+<p>
+    <i>
+        <a href="https://www.cnet.com/news/social-media/elon-musk-and-twitter-have-a-deal/" target="_blank" title="">
+            Article de CNET.com adapté par CNETFrance
+        </a>
+    </i>
+</p>
+<p>
+    Image : NORAD and USNORTHCOM Public Affairs, DP</p>
+<span></span>
+
+
+</p>
+                                                                    </div>
+                </div>
+                <header class="content-header content-header-lead">
+                    <div id="article-info" class="row article-byline">
+    <ul>
+        <li>
+            Par
+                                                                                                                                                                                                                                                    <a class="author" href="https://www.cnet.com/">
+                        <span>Marc Zaffagni avec CNET.com</span>
+                    </a>
+                                                    </li>
+                <li>
+                            mardi 26 avril 2022 à 08:16
+                    </li>
+            </ul>
+</div>                </header>
+                                <div class="article-main-body">
+                    <div class="row first-letter" data-use-autolinker="true">
+                        <div class="BeOpinionWidget"></div>
+                                                                            <div class="nr_title">à lire aussi</div>
+                            <ul>
+                                <li>
+                                    <a href="/produits/reseaux-sociaux-gerez-facilement-votre-vie-privee-avec-privacyfix-39797801.htm" title="Réseaux sociaux : gérez facilement votre vie privée avec PrivacyFix">
+                                        <b>
+                                            Réseaux sociaux : gérez facilement votre vie privée avec PrivacyFix
+                                        </b>
+                                    </a>
+                                </li>
+                            </ul>
+                        
+                            <div class="row collections-topics-and-tags" section="tag">
+        <dl>
+            <dt>
+                <b>Tags: </b>
+            </dt>
+                            <dd>
+                    <a href="/marque/twitter-40023263.htm">Twitter</a>
+                </dd>
+                            <dd>
+                    <a href="/special/twitter-4000092137.htm">Twitter</a>
+                </dd>
+                    </dl>
+    </div>
+
+                        
+                                            </div>
+                                    </div>
+
+                                    <div id="taboola-below-article-thumbnails"></div>
+                
+                <div id="livefyreContainer">
+    <a name="comments" class="livefyreJumpTarget">&nbsp;</a>
+    <h2>Rejoignez la conversation</h2>
+    <div id="livefyreConversation" data-component="livefyreConversation">
+        <div class="fyre fyre-width-medium">
+            <div class="fyre-widget fyre-avatar-disabled">
+                <div class="fyre-featured-content-wrapper" style="display: none">
+                </div>
+
+                
+                                    <div class="fyre-auth">
+                        <div class="fyre-login-bar">
+                            <a rel="nofollow" class="fyre-user-loggedout" href="/membres/" data-box="logIn" data-modal-ajax="/membres/login.htm"  data-referer="https://www.cnetfrance.fr/news/elon-musk-et-twitter-ont-conclu-un-accord-39941045.htm">Se connecter</a>
+                        </div>
+                    </div>
+                
+                <div class="fyre-editor">
+                    <div class="fyre-editor-container fyre-editor-container-focus">
+                        <form method="post" action="" id="comment-form">
+                            <input type="hidden" name="id" value="39941045" />
+                            <input type="hidden" name="process" value="talkback" />
+                            <label title="10 caractères minimum requis">
+                                <strong>Votre commentaire :</strong>
+                                <span class="howTo">(10 caractères minimum)</span>
+                                <textarea name="commentText" wrap="soft" rows="1" cols="42" class="minLength maxLength revOneLineSum fyre-editor-editable editable fyre-editor-field" data-modal-ajax="/membres/login.htm"  data-box="logIn" data-referer="https://www.cnetfrance.fr/news/elon-musk-et-twitter-ont-conclu-un-accord-39941045.htm"></textarea>
+                            </label>
+                            <input type="submit" class="btn-link logIn" value="Publier votre avis" href="#logIn" data-modal-ajax="/membres/login.htm"  data-box="logIn" >
+                            <p class="terms">
+                                Afin de garantir un bon esprit de participation, les modérateurs de CNET.fr se réservent le droit de supprimer/modifier tout message considéré comme publicitaire, hors-sujet ou abusif (notamment en cas de commentaire diffamatoire ou injurieux).
+                                <br/>En publiant votre commentaire, vous indiquez accepter les <a rel="nofollow" href="/conditions-generales-utilisation.htm">conditions générales d'utilisation</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="fyre-comment-preview" style="display: none;">
+                    <div>Custom HTML Preview<span class="fyre-icon-remove"></span></div>
+                    <div class="fyre-roundedpanel-content fyre-comment-preview-content">
+                        <article class="fyre-comment-article">
+                            <div class="fyre-comment">
+                                <div class="fyre-comment-raw-html">
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="fyre-comment-stream js-comments-container" data-page-count="0">
+                    <div class="fyre-stream-content js-comments-list">
+                                            </div>
+
+                    <div class="fyre-stream-content-not-found">
+                    </div>
+
+                                    </div>
+
+                <div class="fyre-top-content-stream">
+                </div>
+                <div class="fyre-thread-breakout-stream">
+                </div>
+                <div class="fyre-stream-menu-container">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+            </article>
+
+        </div>
+        <div class="col-4 is--sticky">
+            <div id="ad-mpu-plus-top" class="ad-mpu-plus-top">
+    <!-- ad_type : mpu = formatId : 300_atf -->
+<div class="ad-mention">publicit&eacute;</div>
+<div data-ad="300_atf"></div>
+
+</div>
+            <div id="NativeAdPaveInAd">
+                <!-- ad_type : native-pave = formatId : native_seealso_right -->
+<div data-ad="native_seealso_right"></div>
+
+            </div>
+                            <section class="dontMissRight" section="dontMissRight">
+            <h2 class="section-title">À la Une</h2>
+                            <div class="asset">
+                    <a href="/news/le-reseau-mastodon-explose-apres-le-rachat-de-twitter-par-musk-39941147.htm" onclick="unify_dataSlayer && unify_dataSlayer.push({'event': 'homepage-hot-topics', 'val': 'Le r&eacute;seau Mastodon explose apr&egrave;s le rachat de Twitter par Musk'});">
+                        <div class="col-1 imageLinkWrapper">
+                            <figure class="col-1 img">
+                                <picture>
+        <img src="https://d1fmx1rbmqrxrr.cloudfront.net/cnet/optim/i/edit/2017/04/mastodon-twitter-270.jpg" style="width: 100%;" alt="Le réseau Mastodon explose après le rachat de Twitter par Musk">
+</picture>
+                            </figure>
+                        </div>
+                        <div class="col-3 desc">
+                            <div class="articleTitle">Le réseau Mastodon explose après le rachat de Twitter par Musk</div>
+                        </div>
+                    </a>
+                </div>
+                            <div class="asset">
+                    <a href="/news/jack-dorsey-salue-l-acquisition-de-twitter-par-elon-musk-39941059.htm" onclick="unify_dataSlayer && unify_dataSlayer.push({'event': 'homepage-hot-topics', 'val': 'Jack Dorsey salue l&#039;acquisition de Twitter par Elon Musk '});">
+                        <div class="col-1 imageLinkWrapper">
+                            <figure class="col-1 img">
+                                <picture>
+        <img src="https://d1fmx1rbmqrxrr.cloudfront.net/cnet/optim/i/edit/2022/04/twitter_musk_dorsey_small__70_52.jpg" style="width: 100%;" alt="Jack Dorsey salue l'acquisition de Twitter par Elon Musk ">
+</picture>
+                            </figure>
+                        </div>
+                        <div class="col-3 desc">
+                            <div class="articleTitle">Jack Dorsey salue l'acquisition de Twitter par Elon Musk </div>
+                        </div>
+                    </a>
+                </div>
+                            <div class="asset">
+                    <a href="/news/rachat-de-twitter-le-conseil-d-administration-se-protege-contre-une-opa-hostile-d-elon-musk-39940699.htm" onclick="unify_dataSlayer && unify_dataSlayer.push({'event': 'homepage-hot-topics', 'val': 'Rachat de Twitter : le conseil d&#039;administration se prot&egrave;ge contre une OPA hostile d&#039;Elon Musk'});">
+                        <div class="col-1 imageLinkWrapper">
+                            <figure class="col-1 img">
+                                <picture>
+        <img src="https://d1fmx1rbmqrxrr.cloudfront.net/cnet/optim/i/edit/2021/11/twitter-270__70_52.jpg" style="width: 100%;" alt="Rachat de Twitter : le conseil d'administration se protège contre une OPA hostile d'Elon Musk">
+</picture>
+                            </figure>
+                        </div>
+                        <div class="col-3 desc">
+                            <div class="articleTitle">Rachat de Twitter : le conseil d'administration se protège contre une OPA hostile d'Elon Musk</div>
+                        </div>
+                    </a>
+                </div>
+                            <div class="asset">
+                    <a href="/news/elon-musk-fait-une-offre-de-43-milliards-pour-s-offrir-twitter-39940589.htm" onclick="unify_dataSlayer && unify_dataSlayer.push({'event': 'homepage-hot-topics', 'val': 'Elon Musk fait une offre de 43 milliards pour s&#039;offrir Twitter'});">
+                        <div class="col-1 imageLinkWrapper">
+                            <figure class="col-1 img">
+                                <picture>
+        <img src="https://d1fmx1rbmqrxrr.cloudfront.net/cnet/optim/i/edit/2021/11/twitter-270__70_52.jpg" style="width: 100%;" alt="Elon Musk fait une offre de 43 milliards pour s'offrir Twitter">
+</picture>
+                            </figure>
+                        </div>
+                        <div class="col-3 desc">
+                            <div class="articleTitle">Elon Musk fait une offre de 43 milliards pour s'offrir Twitter</div>
+                        </div>
+                    </a>
+                </div>
+                    </section>
+        <section class="dontMissRight" section="dontMissRight">
+        <h2 class="section-title">À ne pas manquer</h2>
+                    <div class="asset">
+                <a href="https://www.cnetfrance.fr/produits/catalogue-netflix-meilleure-serie-films-regarder-39848354-ce-mois-ci_1.htm" onclick="unify_dataSlayer && unify_dataSlayer.push({'event': 'homepage-hot-topics', 'val': 'Catalogue Netflix : on regarde quoi ce mois-ci ?'});">
+                    <div class="col-1 imageLinkWrapper">
+                        <figure class="col-1 img">
+                            <picture>
+        <img src="https://d1fmx1rbmqrxrr.cloudfront.net/cnet/optim/i/edit/2019/11/netflix-ce-mois-ci__70_52.jpg" style="width: 100%;" alt="Catalogue Netflix : on regarde quoi ce mois-ci ?">
+</picture>
+                        </figure>
+                    </div>
+                    <div class="col-3 desc">
+                        <div class="articleTitle">Catalogue Netflix : on regarde quoi ce mois-ci ?</div>
+                    </div>
+                </a>
+            </div>
+                    <div class="asset">
+                <a href="https://www.cnetfrance.fr/produits/comparatif-meilleur-forfait-mobile-39845518.htm" onclick="unify_dataSlayer && unify_dataSlayer.push({'event': 'homepage-hot-topics', 'val': 'Les meilleurs forfaits mobiles du moment'});">
+                    <div class="col-1 imageLinkWrapper">
+                        <figure class="col-1 img">
+                            <picture>
+        <img src="https://d1fmx1rbmqrxrr.cloudfront.net/cnet/optim/i/edit/2017/12/byou-red-sosh-comparatif-270__70_52.jpg" style="width: 100%;" alt="Les meilleurs forfaits mobiles du moment">
+</picture>
+                        </figure>
+                    </div>
+                    <div class="col-3 desc">
+                        <div class="articleTitle">Les meilleurs forfaits mobiles du moment</div>
+                    </div>
+                </a>
+            </div>
+                    <div class="asset">
+                <a href="https://www.cnetfrance.fr/produits/fibre-optique-comparatif-guide-meilleure-offre-39847408.htm" onclick="unify_dataSlayer && unify_dataSlayer.push({'event': 'homepage-hot-topics', 'val': 'Offre fibre : notre guide pour choisir le meilleur forfait'});">
+                    <div class="col-1 imageLinkWrapper">
+                        <figure class="col-1 img">
+                            <picture>
+        <img src="https://d1fmx1rbmqrxrr.cloudfront.net/cnet/optim/i/edit/2016/07/fibre-free-270__70_52.jpg" style="width: 100%;" alt="Offre fibre : notre guide pour choisir le meilleur forfait">
+</picture>
+                        </figure>
+                    </div>
+                    <div class="col-3 desc">
+                        <div class="articleTitle">Offre fibre : notre guide pour choisir le meilleur forfait</div>
+                    </div>
+                </a>
+            </div>
+                    <div class="asset">
+                <a href="https://www.cnetfrance.fr/produits/les-meilleurs-smartphones-39368049.htm" onclick="unify_dataSlayer && unify_dataSlayer.push({'event': 'homepage-hot-topics', 'val': 'Les meilleurs smartphones &agrave; acheter (comparatif)'});">
+                    <div class="col-1 imageLinkWrapper">
+                        <figure class="col-1 img">
+                            <picture>
+        <img src="https://d1fmx1rbmqrxrr.cloudfront.net/cnet/optim/i/edit/2020/10/iphone-12-12-pro-test-small__70_52.jpg" style="width: 100%;" alt="Les meilleurs smartphones à acheter (comparatif)">
+</picture>
+                        </figure>
+                    </div>
+                    <div class="col-3 desc">
+                        <div class="articleTitle">Les meilleurs smartphones à acheter (comparatif)</div>
+                    </div>
+                </a>
+            </div>
+            </section>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div id="hotProducts">
+    <span>En ce moment :</span>
+    <ul>
+                <li>
+            <a href="/produits/les-meilleurs-smartphones-39368049.htm" title="Les meilleurs smartphones de 2022">Les meilleurs smartphones de 2022</a>
+        </li>
+                <li>
+            <a href="/salons/ces/" title="CES 2022">CES 2022</a>
+        </li>
+                <li>
+            <a href="/salons/mwc/" title="MWC 2022">MWC 2022</a>
+        </li>
+                <li>
+            <a href="/special/android-4000082258.htm" title="Android">Android</a>
+        </li>
+                <li>
+            <a href="/special/ios-4000237213.htm" title="iOS">iOS</a>
+        </li>
+                <li>
+            <a href="/special/tablette-tactile-4000143148.htm" title="Tablettes">Tablettes</a>
+        </li>
+                <li>
+            <a href="/special/television-4000080613.htm" title="Image & Son">Image & Son</a>
+        </li>
+                <li>
+            <a href="/special/photo-4000000178.htm" title="Photo">Photo</a>
+        </li>
+                <li>
+            <a href="/special/internet-3900046186.htm" title="Internet & Sécurité">Internet & Sécurité</a>
+        </li>
+                <li>
+            <a href="/special/windows-4000000147.htm" title="Windows">Windows</a>
+        </li>
+                <li>
+            <a href="/special/objets-connectes-4000237247.htm" title="Objets connectés">Objets connectés</a>
+        </li>
+                <li>
+            <a href="/bon-plan/" title="Soldes et Bons plans">Soldes et Bons plans</a>
+        </li>
+                <li>
+            <a href="/special/noel.htm" title="Noël 2021">Noël 2021</a>
+        </li>
+                <li>
+            <a href="/services/4g-monitor/" title="Couverture 4G">Couverture 4G</a>
+        </li>
+            </ul>
+</div>        </div>
+    </div>
+</div>
+                    </div>
+    </div>
+</div>
+
+<a id="stop-alert-corner"></a>
+
+<footer id="rbFooter">
+    <div id="footerCopyright" class="col-12">
+        <div id="legal">
+            <a rel="nofollow" href="/mentions-legales.htm">Mentions légales</a>
+            <a rel="nofollow" href="/conditions-generales-utilisation.htm">Conditions générales d'utilisation</a>
+            <a rel="nofollow" href="/conditions-generales-abonnement.htm">Conditions générales d'abonnement</a>
+            <a rel="nofollow" href="https://unifygroup.com/fr/">Ad Specs</a>
+            <a rel="nofollow" href="/politique-de-confidentialite.htm">Politique de protection des données personnelles</a>
+            <a rel="nofollow" href="/faq-cookies.htm">Foire aux questions - Vos choix concernant l'utilisation de cookies</a>
+            <a class="js-change-consent" href="#">Paramétrer les cookies</a>
+        </div>
+
+        <br />
+        <span style="font-size:11px;">
+            Copyright © 2022 CNET, A RED VENTURES COMPANY. ALL RIGHTS RESERVED. CUP Interactive SAS (France). Tous droits réservés.
+        </span>
+
+            </div>
+
+    <nav id="footerMap" class="container">
+        <ul class="col-2 first">
+            <li><a href="/">cnet</a></li>
+        </ul>
+        <ul class="col-2"><li class="section">Produits</li>
+            <li><a href="/produits/" title="Tous les produits">Tous les produits</a></li>
+            <li><a href="/produits/telephones-mobiles/" title="T&eacute;l&eacute;phones mobiles">T&eacute;l&eacute;phones mobiles</a></li>
+            <li><a href="/produits/pc-portables-netbooks/" title="PC portables et Netbooks">PC portables et Netbooks</a></li>
+            <li><a href="/produits/appareils-photo-numeriques/" title="Cam&eacute;scopes &amp; Appareils photos num&eacute;riques">Cam&eacute;scopes <br>&amp; Appareils photos num&eacute;riques</a></li>
+            <li><a href="/produits/tv-hd/" title="T&eacute;l&eacute;visions">T&eacute;l&eacute;visions</a></li>
+        </ul>
+        <ul class="col-2">
+            <li class="section">News</li>
+            <li><a href="/news/" title="Toutes les news">Toutes les news</a></li>
+            <li><a href="/news/gadget/" title="Gadget">Gadget</a></li>
+            <li><a href="/news/internet/" title="Internet">Internet</a></li>
+            <li><a href="/news/mobilite/" title="Mobilit&eacute;">Mobilit&eacute;</a></li>
+            <li><a href="/news/photo-video/" title="Photo-vid&eacute;o">Photo-vid&eacute;o</a></li>
+        </ul>
+        <ul class="col-2">
+            <li class="section">T&eacute;l&eacute;chargements</li>
+            <li><a href="/telecharger/" title="Tous les t&eacute;l&eacute;chargements">Tous les t&eacute;l&eacute;chargements</a></li>
+            <li><a href="/telecharger/android/" title="T&eacute;l&eacute;chargements Android">Android</a></li>
+            <li><a href="/telecharger/ios/" title="T&eacute;l&eacute;chargements iOS">iOS</a></li>
+            <li><a href="/telecharger/windows/" title="T&eacute;l&eacute;chargements Windows">Windows</a></li>
+            <li><a href="/telecharger/macos/" title="T&eacute;l&eacute;chargements Mac">Mac</a></li>
+            <li><a href="/jeux-flash/" title="Jeux flash">Jeux flash</a></li>
+        </ul>
+        <ul class="col-2" data-component="mobileFooterLink">
+            <li class="section">Comparateur forfait</li>
+            <li><a href="https://www.cnetfrance.fr/comparateur-forfait-mobile/" title="equipe">Comparateur forfait mobile</a></li>
+            <li><a href="https://www.cnetfrance.fr/comparateur-box-internet/" title="equipe">Comparateur box internet</a></li>
+            <li class="section">à propos</li>
+            <li><a href="/auteurs/" title="equipe">L'équipe</a></li>
+            <li><a rel="nofollow" href="https://unifygroup.com/fr/">A propos de<br />Unify</a></li>
+        </ul>
+        <ul class="col-2 last">
+            <li class="section">Suivre CNET via...</li>
+            <li><a href="https://www.facebook.com/cnetfrance" class="social-core-facebook">Facebook</a></li>
+            <li><a href="https://twitter.com/cnetfrance" class="social-core-twitter">Twitter</a></li>
+            <li><a href="https://www.youtube.com/user/CNETfrance" class="social-core-youtube">YouTube</a></li>
+            <li><a href="https://www.dailymotion.com/CNETFrance" class="social-core-dailymotion">Dailymotion</a></li>
+            <li><a href="/membres/" class="social-core-newsletters">Newsletters</a></li>
+            <li><a href="/services/xml/rss/" class="social-core-rss" data-vanity-rewritten="true">RSS</a></li>
+        </ul>
+    </nav>
+</footer>
+
+<div id="fb-root"></div>
+    <script type="text/javascript" src="/min-js/jquery.cookie.js?v=202204261200"></script>
+    <script type="text/javascript" src="/min-js/app.js?v=202204261200"></script>
+    <script type="text/javascript" src="/min-js/produit.js?v=202204261200"></script>
+    <script type="text/javascript" src="/min-js/jquery.colorbox.js?v=202204261200"></script>
+    <script type="text/javascript" src="/min-js/external/iframeResizer.min.js?v=202204261200"></script>
+<style>
+.BeOpinionWidget iframe {
+    width: 1px;
+    min-width: 100%;
+}
+</style>
+<script type="text/javascript">
+    
+    iFrameResize({ log: true }, '.BeOpinionWidget iframe');
+
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+        var regexS = "[\\?&]" + name + "=([^&#]*)";
+        var regex = new RegExp(regexS);
+        var results = regex.exec(window.location.href);
+        if (results == null) {
+            return "";
+        } else {
+            return decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+    }
+
+    function ajaxMore(dim_id, url) {
+        $target = $('#dim-' + dim_id);
+
+        var $loader = $('<img />', {
+            src: '/images/icon/ajax-loader.gif',
+            alt: 'Chargement...'
+        });
+        var $error = $('<div/>', {
+            text: 'Une erreur s\'est produite, merci de rafraichir la page'
+        });
+
+        $.ajax({
+            url: url,
+            dataType: 'html',
+            beforeSend: function () {
+                $target.find('ul').before($loader).hide();
+            },
+            error: function () {
+                $target.find('ul').before($error).hide();
+            },
+            success: function (data) {
+                $target.html(data);
+            }
+        });
+    }
+    
+</script>
+
+</body>
+</html>

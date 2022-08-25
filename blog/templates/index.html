@@ -1,0 +1,434 @@
+{% extends 'base.html' %}
+{%block title%}Home {%endblock%}
+
+{% load static %}
+
+{% block content %}
+<style>
+    #img{
+        width: 400px;
+        height: 180px;
+    }
+</style>
+
+    <!-- Header End -->
+    <!-- Hero Start -->
+    <section class="hero" style="background-image: url('{% static 'blog/assets/images/ss.jpg' %}'); overflow: auto; position: relative; z-index: 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 offset-md-1 col-md-11">
+                    <div class="swiper-container hero-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide slide-content d-flex align-items-center">
+                                <div class="single-slide">
+                                    <h1 data-aos="fade-right" data-aos-delay="200"><br> A propos MTS GROUP blogs
+                                    </h1>
+                                    <p data-aos="fade-right" data-aos-delay="600">MTS GROUP est le partenaire de choix de bon nombre des plus grandes entreprises, PME et challengers technologiques du monde. Nous aidons les entreprises à augmenter leur valeur grâce au développement de logiciels personnalisés, à la conception de produits, à l’assurance qualité et aux services de conseil.
+                                    </p>
+                                    <a data-aos="fade-right" id="btn-1" onclick="showBlog();" data-aos-delay="900" href="#" class="btn btn-primary">See
+                                        More</a>
+                                    
+                                </div>
+                            </div>
+                            <div class="swiper-slide slide-content d-flex align-items-center">
+                                <div class="single-slide">
+                                    <h1 data-aos="fade-right" data-aos-delay="200">Creative<br> MTS GROUP  Team
+                                     </h1>
+                                    <p data-aos="fade-right" data-aos-delay="600">L'équipe Cyber Security MTS GROUP couvre régulièrement les problèmes de sécurité de l'information qui importent aux entreprises, y compris les actualités, les analyses, le leadership éclairé et les rapports sur la cybersécurité.
+                                    </p>
+                                    <a data-aos="fade-right" onclick="showContact();" data-aos-delay="900" href="#" class="btn btn-primary">See
+                                        More</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Add Control -->
+            <span class="arr-left"><i class="fa fa-angle-left"></i></span>
+            <span class="arr-right"><i class="fa fa-angle-right"></i></span>
+        </div>
+        <div class="texture"></div>
+        <div class="diag-bg"></div>
+    </section>
+    <!-- Hero End -->
+    <!-- Call To Action Start -->
+    <section class="cta" data-aos="fade-up" data-aos-delay="0">
+        <div class="container">
+            <div class="cta-content d-xl-flex align-items-center justify-content-around text-center text-xl-left">
+                <div class="content" data-aos="fade-right" data-aos-delay="200">
+                    <h3>We are 100+ professional software engineers with more <br>than 10 years of experience in delivering superior products</h3>
+                </div><br>
+                
+            </div>
+        </div>
+    </section>
+    <!-- Call To Action End -->
+    <!-- Services Start -->
+    <section class="services">
+        <div class="container">
+            <div class="title text-center">
+                <h6>Our Speakers</h6>
+                <h1 class="title-blue">Why Choose Us</h1>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="media" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400">
+                            <img class="mr-4" src="{% static 'blog/assets/images/service1.png'%}" alt="Web Development">
+                            <div class="media-body">
+                                <h5>Centre des opérations de sécurité</h5>
+                                Surveillance continue des cybermenaces par abonnement par des analystes experts en sécurité
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="media" data-aos="fade-up" data-aos-delay="400" data-aos-duration="600">
+                            <img class="mr-4" src="{% static 'blog/assets/images/service2.png'%}" alt="Web Development">
+                            <div class="media-body">
+                                <h5>Gestion des identités et conseils</h5>
+                                Expertise dans l'expansion et l'automatisation des capacités de gestion des identités et des accès
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="media" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">
+                            <img class="mr-4" src="{% static 'blog/assets/images/service3.png'%}" alt="Web Development">
+                            <div class="media-body">
+                                <h5>Formation à la sécurité et exercices d'entraînement</h5>
+                                Cours et exercices sur table pour réduire les risques et améliorer la préparation du personnel
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="media" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400">
+                            <img class="mr-4" src="{% static 'blog/assets/images/service4.png'%}" alt="Web Development">
+                            <div class="media-body">
+                                <h5>Planification de la sécurité et conformité</h5>
+                                Évaluations, feuilles de route d'amélioration, conformité réglementaire et élaboration de politiques
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="media" data-aos="fade-up" data-aos-delay="400" data-aos-duration="600">
+                            <img class="mr-4" src="{% static 'blog/assets/images/service1.png'%}" alt="Web Development">
+                            <div class="media-body">
+                                <h5>FORMATION</h5>
+                                MTS GROUP possède sa propre plateforme de formation de haut niveau dans le domaine des technologies de l’information du management SI et de la sécurité et de la communication (TIC).
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="media" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">
+                            <img class="mr-4" src="{% static 'blog/assets/images/service5.png'%}" alt="Web Development">
+                            <div class="media-body">
+                                <h5>Perspectives et défense sur la cybercriminalité</h5>
+                                Renseignements sur les attaques actives et planifiées, y compris le vol de données et les ransomwares
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services End -->
+    <!-- Featured Start -->
+    <section class="featured">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-right" data-aos-delay="400" data-aos-duration="800">
+                    <div class="title">
+                        <h6 class="title-primary">// SERVICE</h6>
+                        <h1 class="title-blue">CYBERSECURITY.</h1>
+                    </div>
+                    <p>La transformation digitale augmente les risques en ouvrant le système d’information anciennement réservé à l’entreprise et au matériel fourni par l’IT, en complexifiant les architectures composées de systèmes hétérogènes, hybrides et mondialisés et en accélérant les échanges. Les facteurs de risques sécuritaires évoluent. La donnée est partout. Dans le cloud, les réseaux locaux, sans fil, sociaux, professionnels, les applications, services, services et objets connectés…Elle s’accumule, se vend, attise les convoitises et est exposée aux cybermenaces.</p>
+                    <div class="media-element d-flex justify-content-between">
+                        <div class="media">
+                            <i class="fa fa-magic mr-4"></i>
+                            <div class="media-body">
+                                <h5>any offer</h5>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <a href="#" onclick="showBlog();" class="btn btn-primary">See More</a>
+                </div>
+                <div class="col-md-6" data-aos="fade-left" data-aos-delay="400" data-aos-duration="800">
+                    <div class="featured-img">
+                        <img class="featured-big" src="{% static 'blog/assets/images/pic1.png'%}" alt="Featured 1">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Featured End -->
+    <!-- Recent Posts Start -->
+    <section class="recent-posts">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="single-rpost d-sm-flex align-items-center" data-aos="fade-right"
+                        data-aos-duration="800">
+                        <div class="post-content text-sm-right">
+                            
+                            <h3><a href="https://mtsgroup.ma/formation-et-certification-it/">FORMATION ET CERTIFICATION</a></h3>
+                            
+                            <a class="post-btn" href="https://mtsgroup.ma/formation-et-certification-it/"><i class="fa fa-arrow-right"></i></a>
+                        </div>
+                        <div class="post-thumb">
+                            <img id="img" class="img-fluid" src="{% static 'blog/assets/images/mts.jpg'%}" alt="Post 1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="single-rpost d-sm-flex align-items-center" data-aos="fade-left" data-aos-duration="800">
+                        <div class="post-thumb">
+                            <img id="img" class="img-fluid" src="{% static 'blog/assets/images/w.jfif'%}" alt="Post 1">
+                        </div>
+                        <div class="post-content">
+                            
+                            <h3><a href="#">Web Development</a></h3>
+                            
+                            <a class="post-btn" href="https://mtsgroup.ma/integration-et-developpement/"><i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="single-rpost d-sm-flex align-items-center" data-aos="fade-right" data-aos-delay="200"
+                        data-aos-duration="800">
+                        <div class="post-content text-sm-right">
+                            
+                            <h3><a href="#">CYBERSECURITY</a></h3>
+                            <a class="post-btn" href="https://mtsgroup.ma/cybersecurite/"><i class="fa fa-arrow-right"></i></a>
+                        </div>
+                        <div class="post-thumb">
+                            <img id="img" class="img-fluid" src="{% static 'blog/assets/images/s.jfif'%}" alt="Post 1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="single-rpost d-sm-flex align-items-center" data-aos="fade-left" data-aos-delay="200"
+                        data-aos-duration="800">
+                        <div class="post-thumb">
+                            <img id="img" class="img-fluid" src="{% static 'blog/assets/images/t.jpg'%}" alt="Post 1">
+                        </div>
+                        <div class="post-content">
+                            <h3><a href="">DIGITAL ET WEB</a></h3>
+                            <a class="post-btn" href="https://mtsgroup.ma/digital-et-web/"><i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="https://mtsgroup.ma/" class="btn btn-primary">See More</a>
+            </div>
+        </div>
+    </section>
+    <!-- Recent Posts End -->
+    <!-- Trust Start -->
+    <section class="trust">
+        <div class="container">
+            <div class="row">
+                <div class="offset-xl-1 col-xl-6" data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">
+                    <div class="title">
+                        <h6 class="title-primary">// NOS CLIENTS</h6>
+                        <h1>
+                            Des Clients De +20 Pays En Afrique
+                            et en Europe Nous ont fait confiance</h1>
+                    </div>
+                    
+                </div>
+                <div class="col-xl-5 gallery">
+                    <div class="row no-gutters h-100" id="lightgallery">
+                        <a href="{% static 'blog/https://lorempixel.com/600/400/'%}" class="w-50 h-100 gal-img" data-aos="fade-up"
+                            data-aos-delay="200" data-aos-duration="400">
+                            <img class="img-fluid" src="{% static 'blog/assets/images/1.avif'%}" alt="Gallery Image">
+                            <i class="fa fa-caret-right"></i>
+                        </a>
+                        <a href="{% static 'blog/https://lorempixel.com/600/400/'%}" class="w-50 h-50 gal-img" data-aos="fade-up"
+                            data-aos-delay="400" data-aos-duration="600">
+                            <img class="img-fluid" src="{% static 'blog/assets/images/2.jpg'%}" alt="Gallery Image">
+                            <i class="fa fa-caret-right"></i>
+                        </a>
+                        <a href="{% static 'blog/https://lorempixel.com/600/400/'%}" class="w-50 h-50 gal-img gal-img3" data-aos="fade-up"
+                            data-aos-delay="0" data-aos-duration="600">
+                            <img class="img-fluid" src="{% static 'blog/assets/images/3.jpg'%}" alt="Gallery Image">
+                            <i class="fa fa-caret-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Trust End -->
+    <!-- Pricing Start -->
+    <section class="pricing-table">
+        <div class="container">
+            <div class="title text-center">
+                <h6 class="title-primary">// CHOOSE YOUR PLAN</h6>
+                <h1 class="title-blue">
+                    Flexible Pricing Plans</h1>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <div class="single-pricing text-center" data-aos="fade-up" data-aos-delay="0"
+                        data-aos-duration="600">
+                        <span>Monthly</span>
+                        <h2>Basic Plan</h2>
+                        <p class="desc">Here goes some description</p>
+                        <p class="price">$129.00</p>
+                        <p>Web Counsulting</p>
+                        <p>24/7 System Monitoring</p>
+                        <p>Machine and Deep Learning</p>
+                        <p>Data Quality Management  </p>
+                        <p>Security Management</p>
+                        <a href="#" class="btn btn-primary">Buy Now</a>
+                        <svg viewBox="0 0 170 193">
+                            <path fill-rule="evenodd" fill="rgb(238, 21, 21)"
+                                d="M39.000,31.999 C39.000,31.999 -21.000,86.500 9.000,121.999 C39.000,157.500 91.000,128.500 104.000,160.999 C117.000,193.500 141.000,201.000 150.000,183.000 C159.000,165.000 172.000,99.000 167.000,87.000 C162.000,75.000 170.000,63.000 152.000,45.000 C134.000,27.000 128.000,15.999 116.000,11.000 C104.000,6.000 89.000,-0.001 89.000,-0.001 L39.000,31.999 Z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-pricing text-center" data-aos="fade-up" data-aos-delay="300"
+                        data-aos-duration="600">
+                        <span>Monthly</span>
+                        <h2>Economy Plan</h2>
+                        <p class="desc">Here goes some description</p>
+                        <p class="price">$159.00</p>
+                        <p>Web Counsulting</p>
+                        <p>24/7 System Monitoring</p>
+                        <p>Machine and Deep Learning</p>
+                        <p>Data Quality Management  </p>
+                        <p>Security Management</p>
+                        <a href="#" class="btn btn-primary">Buy Now</a>
+                        <svg viewBox="0 0 170 193">
+                            <path fill-rule="evenodd" fill="rgb(238, 21, 21)"
+                                d="M39.000,31.999 C39.000,31.999 -21.000,86.500 9.000,121.999 C39.000,157.500 91.000,128.500 104.000,160.999 C117.000,193.500 141.000,201.000 150.000,183.000 C159.000,165.000 172.000,99.000 167.000,87.000 C162.000,75.000 170.000,63.000 152.000,45.000 C134.000,27.000 128.000,15.999 116.000,11.000 C104.000,6.000 89.000,-0.001 89.000,-0.001 L39.000,31.999 Z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-pricing text-center" data-aos="fade-up" data-aos-delay="600"
+                        data-aos-duration="600">
+                        <span>Monthly</span>
+                        <h2>Premium Plan</h2>
+                        <p class="desc">Here goes some description</p>
+                        <p class="price">$189.00</p>
+                        <p>Web Counsulting</p>
+                        <p>24/7 System Monitoring</p>
+                        <p>Machine and Deep Learning</p>
+                        <p>Data Quality Management  </p>
+                        <p>Security Management</p>
+                        <a href="#" class="btn btn-primary">Buy Now</a>
+                        <svg viewBox="0 0 170 193">
+                            <path fill-rule="evenodd" fill="rgb(238, 21, 21)"
+                                d="M39.000,31.999 C39.000,31.999 -21.000,86.500 9.000,121.999 C39.000,157.500 91.000,128.500 104.000,160.999 C117.000,193.500 141.000,201.000 150.000,183.000 C159.000,165.000 172.000,99.000 167.000,87.000 C162.000,75.000 170.000,63.000 152.000,45.000 C134.000,27.000 128.000,15.999 116.000,11.000 C104.000,6.000 89.000,-0.001 89.000,-0.001 L39.000,31.999 Z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Pricing End -->
+    <!-- Testimonial and Clients Start -->
+    <section class="testimonial-and-clients">
+        <div class="container">
+            <div class="testimonials">
+                <div class="swiper-container test-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide text-center">
+                            <div class="row">
+                                <div class="offset-lg-1 col-lg-10">
+                                    <div class="test-img" data-aos="fade-up" data-aos-delay="0" data-aos-offset="0"><img
+                                            src="{% static 'blog/assets/images/test1.png'%}" alt="Testimonial 1"></div>
+                                    <h5 data-aos="fade-up" data-aos-delay="200" data-aos-duration="600"
+                                        data-aos-offset="0">Najah Idrissi
+                                        Moulay Rachid</h5>
+                                    <span data-aos="fade-up" data-aos-delay="400" data-aos-duration="600"
+                                        data-aos-offset="0">PRÉSIDENT-DIRECTEUR GÉNÉRAL</span>
+                                    <p data-aos="fade-up" data-aos-delay="600" data-aos-duration="600"
+                                        data-aos-offset="0">
+                                        Nous aidons les entreprises à augmenter leur valeur et à tirer profit des technologies d’information, grâce à l’expertise de nos équipes pluridisciplinaires, le sens du service et la qualité de nos prestations en matière de Consulting SI, Cybersécurité, transformation digitale, et formation professionnelle. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide text-center">
+                            <div class="row">
+                                <div class="offset-lg-1 col-lg-10">
+                                    <div class="test-img" data-aos="fade-up" data-aos-delay="0" data-aos-offset="0"><img
+                                            src="{% static 'blog/assets/images/test1.png'%}" alt="Testimonial 1"></div>
+                                    <h5 data-aos="fade-up" data-aos-delay="200" data-aos-duration="600"
+                                        data-aos-offset="0">Yassine
+                                        Fadili</h5>
+                                    <span data-aos="fade-up" data-aos-delay="400" data-aos-duration="600"
+                                        data-aos-offset="0">CTO OF COMPANY  </span>
+                                    <p data-aos="fade-up" data-aos-delay="600" data-aos-duration="600"
+                                        data-aos-offset="0">Nous aidons les entreprises à augmenter leur valeur et à tirer profit des technologies d’information, grâce à l’expertise de nos équipes pluridisciplinaires, le sens du service et la qualité de nos prestations en matière de Consulting SI, Cybersécurité, transformation digitale, et formation professionnelle. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide text-center">
+                            <div class="row">
+                                <div class="offset-lg-1 col-lg-10">
+                                    <div class="test-img" data-aos="fade-up" data-aos-delay="0" data-aos-offset="0"><img
+                                            src="{% static 'blog/assets/images/test1.png'%}" alt="Testimonial 1"></div>
+                                    <h5 data-aos="fade-up" data-aos-delay="200" data-aos-duration="600"
+                                        data-aos-offset="0">Khalid
+                                        Andalib</h5>
+                                    <span data-aos="fade-up" data-aos-delay="400" data-aos-duration="600"
+                                        data-aos-offset="0">CO-FOUNDER OF COMPANY</span>
+                                    <p data-aos="fade-up" data-aos-delay="600" data-aos-duration="600"
+                                        data-aos-offset="0">Nous aidons les entreprises à augmenter leur valeur et à tirer profit des technologies d’information, grâce à l’expertise de nos équipes pluridisciplinaires, le sens du service et la qualité de nos prestations en matière de Consulting SI, Cybersécurité, transformation digitale, et formation professionnelle.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="test-pagination"></div>
+                </div>
+            </div>
+            <div class="clients" data-aos="fade-up" data-aos-delay="200" data-aos-duration="600">
+                <div class="swiper-container clients-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="{% static 'blog/assets/images/client1.png'%}" alt="Client 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="{% static 'blog/assets/images/client2.png'%}" alt="Client 2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="{% static 'blog/assets/images/client3.png'%}" alt="Client 3">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="{% static 'blog/assets/images/client4.png'%}" alt="Client 4">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="{% static 'blog/assets/images/client5.png'%}" alt="Client 5">
+                        </div>
+                    </div>
+                    <div class="test-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonial and Clients End -->
+    <!-- Call To Action 2 Start -->
+    <br></br><br></br>
+    <!-- Call To Action 2 End -->
+    <!-- Footer Start --><footer>
+    <!-- Widgets Start -->
+    <script>
+      function  showBlog(){
+            window.open('blog');
+            
+        }
+         function  showContact(){
+            window.open('contact');
+            
+        }
+    </script>
+    {% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'bostrap.html' %}
+{%block title%}{{publication.title}}{%endblock%}
+{% load static %}
+{% block content %}
+{% if user.is_authenticated %}
+<br><br><br><br><br><br>
+<div class="form-group" >
+<form method="post" style="margin-left: 40px;" enctype="multipart/form-data">  
+{% csrf_token %}
+{{form.media}}
+{{form.as_p}}
+<button class="btn btn-dark"  >Editer</button>
+
+
+</form>
+</div>
+<br><br><br>
+{%else%}
+
+
+<script>
+  alert('Error message: '+'you are not login ');
+</script>
+{% endif%}
+{%endblock%}

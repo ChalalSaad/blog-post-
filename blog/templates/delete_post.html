@@ -1,0 +1,33 @@
+{% extends 'bostrap.html' %}
+{%block title%}{{post.titre}}{%endblock%}
+{% load static %}
+{% block content %}
+{% if user.is_authenticated %}
+<br><br>
+<div style="padding-left: 40px;">
+<h2>Are you sure?</h2> 
+<br>
+<p>Are you sure you want to delete the post<span style="color: blue; font-family:bold;">" {{post.titre}}  | {{post.creator}} "</span>,  All of the following related items will be deleted:
+</p>
+<br><br>
+<h6>Objects</h6>
+Post: <strong>" {{post.titre}}  | {{post.creator}} "</strong>
+<br>
+<div  class="form-group">
+<form method="post">
+{%csrf_token%}
+<br><br>
+<button class="btn btn-secondary">Yes ,I'm sure</button> <a class="btn btn-secondary" href="{% url 'mypost'  %}">No take me back</a>
+
+</form>
+
+</div>
+</div>
+{%else%}
+
+
+<script>
+  alert('Error message: '+'you are not login ');
+</script>
+{%endif%}
+{%endblock%}

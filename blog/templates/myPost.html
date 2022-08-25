@@ -1,0 +1,95 @@
+
+{% extends 'bostrap.html' %}
+{%block title%}Posts{%endblock%}
+{% load static %}
+{% block content %}
+{% if user.is_authenticated %}
+
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Bootstrap Table</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <!-- icons bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+      <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@400;500;600&family=Inter:wght@300&family=Raleway:wght@100&display=swap" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+      <style>
+ #myclass{
+        display:inline-block;
+        width: 80px;
+        height: 40px;
+}
+a{
+      text-decoration: none;
+      color: #fff;
+}
+a:hover{
+      color: #fff;
+      text-decoration: none;
+}
+
+
+      </style>
+   </head>
+   <body>
+      {% if messages %}
+      {% for message in messages %}
+          <div id="msg" class="text-center alert alert-{{ message.tags }}" role="alert">
+              {{ message|safe }}
+          </div>
+      {% endfor %}
+      {% endif %}
+  <br>
+      <table class = "table">
+         <thead>
+            <tr>
+               <th><h4> Date  </h4></th>
+               <th><h4> Créateur </h4></th>
+               <th><h4>  Contenu</h4></th>
+               <th><h4> Titre</h4></th>
+               <th><h4> Action</h4></th>
+               <th><h4> Topis</h4></th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+                  {% for post in object_list %}    
+               <td><p>{{post.date_post}}</p></td>
+               <td><p>{{post.creator}}</p></td>
+               <td><p>{{post.typeContenu}}</p></td>
+               <td><p>{{post.titre}}</p></td>
+               <td>   <a class="btn btn-dark" href="{% url 'update' post.pk %}"><i class="bi bi-pencil-fill"></i></a> &nbsp;&nbsp; <a class="btn btn-dark" href="{% url 'delete' post.pk %}"><i class="bi bi-trash-fill"></i></a> &nbsp;&nbsp;</td>
+            <td><center><a class="btn btn-dark" href="{% url 'commentBack' post.pk %}">{{ post.comments.all|length }} <i class="bi bi-chat-dots-fill"></i></td>
+               
+            </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+   </body>
+   <script>
+      setTimeout(function() { 
+       if ($("#msg").length >0){
+          $("#msg").remove(); 
+        }
+      }, 2000);
+    
+    </script>
+</html>
+
+
+{%else%}
+
+
+<script>
+  alert('Error message: '+'you are not login ');
+</script>
+{%endif%}
+{% endblock %}

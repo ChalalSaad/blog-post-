@@ -1,0 +1,32 @@
+{% extends 'bostrap.html' %}
+{% load static %}
+{%block title%}login{%endblock%}
+<style>
+
+</style>
+
+{% block content %}
+
+
+{% if  user.is_authenticated %}
+
+<script>
+  alert('Error message: '+'you are already login ');
+</script>
+
+{%else%}
+<br><br><br><br><br><br>
+<div class="form-group" >
+<form method="post" style="margin-left: 40px;">
+    
+{% csrf_token %}
+
+{{form.as_ul}}
+    
+    <button class="btn btn-danger"  >Login</button>
+   
+</form>
+</div>
+{%endif%}
+
+{%endblock%}
